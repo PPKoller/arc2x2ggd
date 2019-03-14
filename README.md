@@ -13,7 +13,8 @@ python setup.sh develop
 ```
 
 # Contact
-* **argoncube2x2ggd:**
+* **arc2x2ggd:**
+* * Patrick Koller `patrick.koller@lhep.unibe.ch` 
 * * Hunter Sullivan `hunter.sullivan@mavs.uta.edu`
 * **dunendggd:**
   * Guang Yang `guang.yang.1@stonybrook.edu`
