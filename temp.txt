@@ -1,0 +1,10 @@
++#=================================
++# Resistive Field-Shell
++#=================================
++[ResistiveFieldShell]
++class                  = argoncube2x2ggd.Detector.SimpleSubDetector.SimpleSubDetectorBuilder
++subbuilders            = ['LArLight']
++material               = 'Kapton'
++dx                     = {LArLight:dx}
++dy                     = {LArLight:dx}+Q('0.05mm')*0.5
++dz                     = {LArLight:dx}+Q('0.05mm')*0.5

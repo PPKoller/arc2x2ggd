@@ -1,0 +1,12 @@
+def define_transformations(geom):
+    noRotate        = geom.structure.Rotation( 'noRotate',      '0deg',  '0deg',  '0deg'  )
+    r90aboutX       = geom.structure.Rotation( 'r90aboutX',      '90deg',  '0deg',  '0deg'  )
+    rminus90aboutX  = geom.structure.Rotation( 'rminus90aboutX', '-90deg', '0deg',  '0deg'  )
+    r90aboutY       = geom.structure.Rotation( 'r90aboutY',      '0deg',   '90deg', '0deg'  )
+    r180aboutY      = geom.structure.Rotation( 'r180aboutY',     '0deg',   '180deg','0deg'  )
+    rminus90aboutY  = geom.structure.Rotation( 'rminus90aboutY', '0deg', '-90deg',  '0deg'  )
+    r90aboutZ       = geom.structure.Rotation( 'r90aboutZ',      '0deg',   '0deg',  '90deg' )
+    r90aboutXZ      = geom.structure.Rotation( 'r90aboutXZ', '90deg',  '0deg', '90deg'  )
+    r90aboutYZ      = geom.structure.Rotation( 'r90aboutYZ', '0deg',  '90deg', '90deg'  )
+    r90aboutXminusZ = geom.structure.Rotation( 'r90aboutXminusZ', '-90deg',  '0deg', '90deg'  )
+    r90aboutYminusZ = geom.structure.Rotation( 'r90aboutYminusZ', '0deg',  '-90deg', '90deg'  )
