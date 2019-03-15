@@ -8,11 +8,12 @@ class CryostatBuilder(gegede.builder.Builder):
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def configure( self, material=None, tubrmin=None, tubrmax=None, tubdz=None,
                     caprmin=None, caprmax=None, caprtor=None,
-                    startphi=None, deltaphi=None, **kwds ):
+                    startphi=None, deltaphi=None, rotation=None, **kwds ):
         self.material = material 
         self.tubrmin, self.tubrmax, self.tubdz = ( tubrmin, tubrmax, tubdz )
         self.caprmin, self.caprmax, self.caprtor = ( caprmin, caprmax, caprtor )
         self.startphi, self.deltaphi = ( startphi, deltaphi )
+        self.rotation = rotation
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def construct( self, geom ):
@@ -50,8 +51,13 @@ class CryostatBuilder(gegede.builder.Builder):
 
         sb_pos = geom.structure.Position(self.name+sb_lv.name+'_pos',
                                          Q('0m'), Q('0m'), Q('0m'))
-        sb_rot = geom.structure.Rotation(self.name+sb_lv.name+'_rot',
-                                         '0.0deg', '0.0deg', '0.0deg')  
+        sb_rot = []                                         
+        if self.rotation != None:                                         
+            sb_rot = geom.structure.Rotation(self.name+sb_lv.name+'_rot', self.rotation[0], self.rotation[1], self.rotation[2])
+        else:            
+            sb_rot = geom.structure.Rotation(self.name+sb_lv.name+'_rot',
+                                             '0.0deg', '0.0deg', '0.0deg')  
+                                             
         sb_pla = geom.structure.Placement(self.name+sb_lv.name+'_pla',
                                             volume=sb_lv, pos=sb_pos, rot=sb_rot)
         boolean_lv.placements.append(sb_pla.name)                                           

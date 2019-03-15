@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
   <define>
+    <rotation name="LArBotWall_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="LArBotWallvolLArBot_pos" unit="cm" x="0" y="0.25" z="0"/>
+    <rotation name="LArBotModule_rot1" unit="degree" x="0" y="0" z="0"/>
+    <position name="LArBotModule_el0_0_pos" unit="cm" x="-34.475" y="0.0" z="-30.835"/>
+    <position name="LArBotModule_el1_0_pos" unit="cm" x="34.775" y="0.0" z="-30.835"/>
+    <position name="LArBotModule_el0_1_pos" unit="cm" x="-34.475" y="0.0" z="31.135"/>
+    <position name="LArBotModule_el1_1_pos" unit="cm" x="34.775" y="0.0" z="31.135"/>
+    <rotation name="LArLight_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="LArLightvolLightUSPlane0_pos" unit="cm" x="0.0" y="0.0" z="-30.2"/>
+    <position name="LArLightvolLArActive0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <position name="LArLightvolLightDSPlane0_pos" unit="cm" x="0.0" y="0.0" z="30.2"/>
+    <rotation name="ResistiveFieldShellTop_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="ResistiveFieldShellTopvolResistiveTopWall0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="ResistiveFieldShellSide_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="ResistiveFieldShellSidevolResistiveSideWall0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <position name="volLArSubModuleLeftvolLArLight_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="LArSubModuleLeft_rotTop" unit="degree" x="0" y="0" z="0"/>
+    <rotation name="LArSubModuleLeft_rotBottom" unit="degree" x="0" y="0" z="180"/>
+    <rotation name="LArSubModuleLeft_rotLeft" unit="degree" x="0" y="0" z="0"/>
+    <rotation name="LArSubModuleLeft_rotRight" unit="degree" x="0" y="0" z="0"/>
+    <position name="volLArSubModuleLeftvolResistiveFieldShellTop_top_pos" unit="cm" x="0.0" y="60.005" z="0.0"/>
+    <position name="volLArSubModuleLeftvolResistiveFieldShellSide_left_pos" unit="cm" x="0.0" y="0.0" z="30.405"/>
+    <position name="volLArSubModuleLeftvolResistiveFieldShellTop_bottom_pos" unit="cm" x="0.0" y="-60.005" z="0.0"/>
+    <position name="volLArSubModuleLeftvolResistiveFieldShellSide_right_pos" unit="cm" x="0.0" y="0.0" z="-30.405"/>
+    <position name="volLArSubModuleRightvolLArLight_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="LArSubModuleRight_rotTop" unit="degree" x="0" y="0" z="0"/>
+    <rotation name="LArSubModuleRight_rotBottom" unit="degree" x="0" y="0" z="0"/>
+    <rotation name="LArSubModuleRight_rotLeft" unit="degree" x="0" y="0" z="0"/>
+    <rotation name="LArSubModuleRight_rotRight" unit="degree" x="0" y="0" z="0"/>
+    <position name="volLArSubModuleRightvolResistiveFieldShellTop_top_pos" unit="cm" x="0.0" y="60.005" z="0.0"/>
+    <position name="volLArSubModuleRightvolResistiveFieldShellSide_left_pos" unit="cm" x="0.0" y="0.0" z="30.405"/>
+    <position name="volLArSubModuleRightvolResistiveFieldShellTop_bottom_pos" unit="cm" x="0.0" y="-60.005" z="0.0"/>
+    <position name="volLArSubModuleRightvolResistiveFieldShellSide_right_pos" unit="cm" x="0.0" y="0.0" z="-30.405"/>
+    <rotation name="LArActiveModule_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="LArActiveModulevolPixelPlaneL0_pos" unit="cm" x="-33.9" y="0.0" z="0.0"/>
+    <position name="LArActiveModulevolLArSubModuleLeft0_pos" unit="cm" x="-17.0" y="0.0" z="0.0"/>
+    <position name="LArActiveModulevolLArCathode0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <position name="LArActiveModulevolLArSubModuleRight0_pos" unit="cm" x="17.0" y="0.0" z="0.0"/>
+    <position name="LArActiveModulevolPixelPlaneR0_pos" unit="cm" x="33.9" y="0.0" z="0.0"/>
+    <position name="volLArActiveModule_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="volLArActiveModule_rot" unit="degree" x="0" y="0" z="0"/>
+    <rotation name="ArgonCubeActive_rot1" unit="degree" x="0" y="0" z="0"/>
+    <position name="ArgonCubeActive_el0_0_pos" unit="cm" x="-34.475" y="0.0" z="-30.835"/>
+    <position name="ArgonCubeActive_el1_0_pos" unit="cm" x="34.775" y="0.0" z="-30.835"/>
+    <position name="ArgonCubeActive_el0_1_pos" unit="cm" x="-34.475" y="0.0" z="31.135"/>
+    <position name="ArgonCubeActive_el1_1_pos" unit="cm" x="34.775" y="0.0" z="31.135"/>
+    <rotation name="LArTopWall_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="LArTopWallvolLArTop10_pos" unit="cm" x="0.0" y="-10.0" z="0.0"/>
+    <position name="LArTopWallvolLArTop20_pos" unit="cm" x="0.0" y="10.0" z="0.0"/>
+    <rotation name="LArTopModule_rot1" unit="degree" x="0" y="0" z="0"/>
+    <position name="LArTopModule_el0_0_pos" unit="cm" x="-34.475" y="0.0" z="-30.835"/>
+    <position name="LArTopModule_el1_0_pos" unit="cm" x="34.775" y="0.0" z="-30.835"/>
+    <position name="LArTopModule_el0_1_pos" unit="cm" x="-34.475" y="0.0" z="31.135"/>
+    <position name="LArTopModule_el1_1_pos" unit="cm" x="34.775" y="0.0" z="31.135"/>
+    <rotation name="ArgonCube_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="ArgonCubevolLArBotModule0_pos" unit="cm" x="0.0" y="-80.51" z="0.0"/>
+    <position name="ArgonCubevolArgonCubeActive0_pos" unit="cm" x="0.0" y="-14.75" z="0.0"/>
+    <position name="ArgonCubevolLArTopModule0_pos" unit="cm" x="0.0" y="65.76" z="0.0"/>
     <position name="CryostatInnerBathTorus_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
     <position name="CryostatInnerBathInnerTub_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
+    <position name="CryostatInnerBathvolArgonCube_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="CryostatInnerBathvolArgonCube_rot" unit="degree" x="90" y="0" z="0"/>
     <position name="CryostatInnerWallTorus_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
     <position name="CryostatInnerWallInnerTub_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
     <position name="CryostatInnerWallvolCryostatInnerBath_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
@@ -19,7 +79,7 @@
     <position name="ArgonCubeCryostatvolCryostatOuterWall_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <rotation name="ArgonCubeDetector_rot" unit="degree" x="0" y="0" z="0"/>
     <position name="ArgonCubeDetectorvolArgonCubeCryostat0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
-    <position name="volArgonCubeDetector_pos" unit="cm" x="0.0" y="-324.0" z="0.0"/>
+    <position name="volArgonCubeDetector_pos" unit="cm" x="0.0" y="-349.0" z="0.0"/>
     <rotation name="volArgonCubeDetector_rot" unit="degree" x="90" y="0" z="0"/>
     <rotation name="noRotate" unit="degree" x="0" y="0" z="0"/>
     <rotation name="r90aboutX" unit="degree" x="90" y="0" z="0"/>
@@ -524,6 +584,30 @@
     </material>
   </materials>
   <solids>
+    <box lunit="cm" name="LArBot" x="68.1" y="10.0" z="60.82"/>
+    <box lunit="cm" name="LArBotWall" x="69.1" y="10.5" z="61.82"/>
+    <box lunit="cm" name="LArBotModule" x="138.2" y="10.5" z="123.64"/>
+    <box lunit="cm" name="PixelPlaneL" x="0.3" y="120.0" z="60.8"/>
+    <box lunit="cm" name="LightUSPlane" x="33.5" y="120.0" z="0.4"/>
+    <box lunit="cm" name="LArActive" x="33.5" y="120.0" z="60.0"/>
+    <box lunit="cm" name="LightDSPlane" x="33.5" y="120.0" z="0.4"/>
+    <box lunit="cm" name="LArLight" x="33.5" y="120.0" z="60.8"/>
+    <box lunit="cm" name="ResistiveTopWall" x="33.5" y="0.01" z="60.8"/>
+    <box lunit="cm" name="ResistiveFieldShellTop" x="33.5" y="0.01" z="60.8"/>
+    <box lunit="cm" name="ResistiveSideWall" x="33.5" y="120.0" z="0.01"/>
+    <box lunit="cm" name="ResistiveFieldShellSide" x="33.5" y="120.0" z="0.01"/>
+    <box lunit="cm" name="LArSubModuleLeft" x="33.5" y="120.02" z="60.82"/>
+    <box lunit="cm" name="LArCathode" x="0.5" y="120.02" z="60.82"/>
+    <box lunit="cm" name="LArSubModuleRight" x="33.5" y="120.02" z="60.82"/>
+    <box lunit="cm" name="PixelPlaneR" x="0.3" y="120.0" z="60.8"/>
+    <box lunit="cm" name="LArActiveModule" x="68.1" y="120.02" z="60.82"/>
+    <box lunit="cm" name="LArActiveModuleWall" x="69.1" y="121.02" z="61.82"/>
+    <box lunit="cm" name="ArgonCubeActive" x="138.2" y="121.02" z="123.64"/>
+    <box lunit="cm" name="LArTop1" x="68.1" y="20.0" z="60.82"/>
+    <box lunit="cm" name="LArTop2" x="68.1" y="20.0" z="60.82"/>
+    <box lunit="cm" name="LArTopWall" x="69.1" y="40.0" z="61.82"/>
+    <box lunit="cm" name="LArTopModule" x="138.2" y="40.0" z="123.64"/>
+    <box lunit="cm" name="ArgonCube" x="138.2" y="171.52" z="123.64"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerBathOuterTub" rmax="99.0" rmin="0.0" startphi="0.0" z="205.0"/>
     <torus aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerBathTorus" rmax="25.0" rmin="0.0" rtor="74.0" startphi="0.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerBathInnerTub" rmax="74.0" rmin="0.0" startphi="0.0" z="50.0"/>
@@ -584,8 +668,8 @@
       <positionref ref="CryostatOuterWallInnerTub_pos"/>
       <rotationref ref="identity"/>
     </union>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeCryostat" rmax="106.0" rmin="0.0" startphi="0.0" z="352.0"/>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeDetector" rmax="106.0" rmin="0.0" startphi="0.0" z="352.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeCryostat" rmax="106.0" rmin="0.0" startphi="0.0" z="302.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeDetector" rmax="106.0" rmin="0.0" startphi="0.0" z="302.0"/>
     <box lunit="cm" name="MinosNDHall" x="1000.0" y="1000.0" z="1000.0"/>
     <box lunit="cm" name="Ground" x="1000.0" y="20.0" z="1000.0"/>
     <box lunit="cm" name="world_shape" x="10000.0" y="10000.0" z="10000.0"/>
@@ -595,9 +679,333 @@
       <materialref ref="Rock"/>
       <solidref ref="Ground"/>
     </volume>
+    <volume name="volLArBot">
+      <materialref ref="LAr"/>
+      <solidref ref="LArBot"/>
+    </volume>
+    <volume name="volLArBotWall">
+      <materialref ref="FR4"/>
+      <solidref ref="LArBotWall"/>
+      <physvol>
+        <volumeref ref="volLArBot"/>
+        <positionref ref="LArBotWallvolLArBot_pos"/>
+        <rotationref ref="LArBotWall_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volLArBotModule">
+      <materialref ref="LAr"/>
+      <solidref ref="LArBotModule"/>
+      <physvol>
+        <volumeref ref="volLArBotWall"/>
+        <positionref ref="LArBotModule_el0_0_pos"/>
+        <rotationref ref="LArBotModule_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArBotWall"/>
+        <positionref ref="LArBotModule_el1_0_pos"/>
+        <rotationref ref="LArBotModule_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArBotWall"/>
+        <positionref ref="LArBotModule_el0_1_pos"/>
+        <rotationref ref="LArBotModule_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArBotWall"/>
+        <positionref ref="LArBotModule_el1_1_pos"/>
+        <rotationref ref="LArBotModule_rot1"/>
+      </physvol>
+    </volume>
+    <volume name="volPixelPlaneL">
+      <materialref ref="FR4"/>
+      <solidref ref="PixelPlaneL"/>
+    </volume>
+    <volume name="volLightUSPlane">
+      <materialref ref="PVT"/>
+      <solidref ref="LightUSPlane"/>
+    </volume>
+    <volume name="volLArActive">
+      <materialref ref="LAr"/>
+      <solidref ref="LArActive"/>
+      <auxiliary auxtype="SensDet" auxvalue="ArgonCube"/>
+    </volume>
+    <volume name="volLightDSPlane">
+      <materialref ref="PVT"/>
+      <solidref ref="LightDSPlane"/>
+    </volume>
+    <volume name="volLArLight">
+      <materialref ref="Air"/>
+      <solidref ref="LArLight"/>
+      <physvol>
+        <volumeref ref="volLightUSPlane"/>
+        <positionref ref="LArLightvolLightUSPlane0_pos"/>
+        <rotationref ref="LArLight_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArActive"/>
+        <positionref ref="LArLightvolLArActive0_pos"/>
+        <rotationref ref="LArLight_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLightDSPlane"/>
+        <positionref ref="LArLightvolLightDSPlane0_pos"/>
+        <rotationref ref="LArLight_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volResistiveTopWall">
+      <materialref ref="Kapton"/>
+      <solidref ref="ResistiveTopWall"/>
+    </volume>
+    <volume name="volResistiveFieldShellTop">
+      <materialref ref="Air"/>
+      <solidref ref="ResistiveFieldShellTop"/>
+      <physvol>
+        <volumeref ref="volResistiveTopWall"/>
+        <positionref ref="ResistiveFieldShellTopvolResistiveTopWall0_pos"/>
+        <rotationref ref="ResistiveFieldShellTop_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volResistiveSideWall">
+      <materialref ref="Kapton"/>
+      <solidref ref="ResistiveSideWall"/>
+    </volume>
+    <volume name="volResistiveFieldShellSide">
+      <materialref ref="Air"/>
+      <solidref ref="ResistiveFieldShellSide"/>
+      <physvol>
+        <volumeref ref="volResistiveSideWall"/>
+        <positionref ref="ResistiveFieldShellSidevolResistiveSideWall0_pos"/>
+        <rotationref ref="ResistiveFieldShellSide_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volLArSubModuleLeft">
+      <materialref ref="Air"/>
+      <solidref ref="LArSubModuleLeft"/>
+      <physvol>
+        <volumeref ref="volLArLight"/>
+        <positionref ref="volLArSubModuleLeftvolLArLight_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volResistiveFieldShellTop"/>
+        <positionref ref="volLArSubModuleLeftvolResistiveFieldShellTop_top_pos"/>
+        <rotationref ref="LArSubModuleLeft_rotTop"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volResistiveFieldShellSide"/>
+        <positionref ref="volLArSubModuleLeftvolResistiveFieldShellSide_left_pos"/>
+        <rotationref ref="LArSubModuleLeft_rotLeft"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volResistiveFieldShellTop"/>
+        <positionref ref="volLArSubModuleLeftvolResistiveFieldShellTop_bottom_pos"/>
+        <rotationref ref="LArSubModuleLeft_rotBottom"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volResistiveFieldShellSide"/>
+        <positionref ref="volLArSubModuleLeftvolResistiveFieldShellSide_right_pos"/>
+        <rotationref ref="LArSubModuleLeft_rotRight"/>
+      </physvol>
+    </volume>
+    <volume name="volLArCathode">
+      <materialref ref="Copper"/>
+      <solidref ref="LArCathode"/>
+    </volume>
+    <volume name="volLArSubModuleRight">
+      <materialref ref="Air"/>
+      <solidref ref="LArSubModuleRight"/>
+      <physvol>
+        <volumeref ref="volLArLight"/>
+        <positionref ref="volLArSubModuleRightvolLArLight_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volResistiveFieldShellTop"/>
+        <positionref ref="volLArSubModuleRightvolResistiveFieldShellTop_top_pos"/>
+        <rotationref ref="LArSubModuleRight_rotTop"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volResistiveFieldShellSide"/>
+        <positionref ref="volLArSubModuleRightvolResistiveFieldShellSide_left_pos"/>
+        <rotationref ref="LArSubModuleRight_rotLeft"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volResistiveFieldShellTop"/>
+        <positionref ref="volLArSubModuleRightvolResistiveFieldShellTop_bottom_pos"/>
+        <rotationref ref="LArSubModuleRight_rotBottom"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volResistiveFieldShellSide"/>
+        <positionref ref="volLArSubModuleRightvolResistiveFieldShellSide_right_pos"/>
+        <rotationref ref="LArSubModuleRight_rotRight"/>
+      </physvol>
+    </volume>
+    <volume name="volPixelPlaneR">
+      <materialref ref="FR4"/>
+      <solidref ref="PixelPlaneR"/>
+    </volume>
+    <volume name="volLArActiveModule">
+      <materialref ref="Air"/>
+      <solidref ref="LArActiveModule"/>
+      <physvol>
+        <volumeref ref="volPixelPlaneL"/>
+        <positionref ref="LArActiveModulevolPixelPlaneL0_pos"/>
+        <rotationref ref="LArActiveModule_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArSubModuleLeft"/>
+        <positionref ref="LArActiveModulevolLArSubModuleLeft0_pos"/>
+        <rotationref ref="LArActiveModule_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArCathode"/>
+        <positionref ref="LArActiveModulevolLArCathode0_pos"/>
+        <rotationref ref="LArActiveModule_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArSubModuleRight"/>
+        <positionref ref="LArActiveModulevolLArSubModuleRight0_pos"/>
+        <rotationref ref="LArActiveModule_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volPixelPlaneR"/>
+        <positionref ref="LArActiveModulevolPixelPlaneR0_pos"/>
+        <rotationref ref="LArActiveModule_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volLArActiveModuleWall00">
+      <materialref ref="FR4"/>
+      <solidref ref="LArActiveModuleWall"/>
+      <physvol>
+        <volumeref ref="volLArActiveModule"/>
+        <positionref ref="volLArActiveModule_pos"/>
+        <rotationref ref="volLArActiveModule_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volLArActiveModuleWall10">
+      <materialref ref="FR4"/>
+      <solidref ref="LArActiveModuleWall"/>
+      <physvol>
+        <volumeref ref="volLArActiveModule"/>
+        <positionref ref="volLArActiveModule_pos"/>
+        <rotationref ref="volLArActiveModule_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volLArActiveModuleWall01">
+      <materialref ref="FR4"/>
+      <solidref ref="LArActiveModuleWall"/>
+      <physvol>
+        <volumeref ref="volLArActiveModule"/>
+        <positionref ref="volLArActiveModule_pos"/>
+        <rotationref ref="volLArActiveModule_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volLArActiveModuleWall11">
+      <materialref ref="FR4"/>
+      <solidref ref="LArActiveModuleWall"/>
+      <physvol>
+        <volumeref ref="volLArActiveModule"/>
+        <positionref ref="volLArActiveModule_pos"/>
+        <rotationref ref="volLArActiveModule_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volArgonCubeActive">
+      <materialref ref="LAr"/>
+      <solidref ref="ArgonCubeActive"/>
+      <physvol>
+        <volumeref ref="volLArActiveModuleWall00"/>
+        <positionref ref="ArgonCubeActive_el0_0_pos"/>
+        <rotationref ref="ArgonCubeActive_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArActiveModuleWall10"/>
+        <positionref ref="ArgonCubeActive_el1_0_pos"/>
+        <rotationref ref="ArgonCubeActive_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArActiveModuleWall01"/>
+        <positionref ref="ArgonCubeActive_el0_1_pos"/>
+        <rotationref ref="ArgonCubeActive_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArActiveModuleWall11"/>
+        <positionref ref="ArgonCubeActive_el1_1_pos"/>
+        <rotationref ref="ArgonCubeActive_rot1"/>
+      </physvol>
+    </volume>
+    <volume name="volLArTop1">
+      <materialref ref="LAr"/>
+      <solidref ref="LArTop1"/>
+    </volume>
+    <volume name="volLArTop2">
+      <materialref ref="GAr"/>
+      <solidref ref="LArTop2"/>
+    </volume>
+    <volume name="volLArTopWall">
+      <materialref ref="FR4"/>
+      <solidref ref="LArTopWall"/>
+      <physvol>
+        <volumeref ref="volLArTop1"/>
+        <positionref ref="LArTopWallvolLArTop10_pos"/>
+        <rotationref ref="LArTopWall_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArTop2"/>
+        <positionref ref="LArTopWallvolLArTop20_pos"/>
+        <rotationref ref="LArTopWall_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volLArTopModule">
+      <materialref ref="LAr"/>
+      <solidref ref="LArTopModule"/>
+      <physvol>
+        <volumeref ref="volLArTopWall"/>
+        <positionref ref="LArTopModule_el0_0_pos"/>
+        <rotationref ref="LArTopModule_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArTopWall"/>
+        <positionref ref="LArTopModule_el1_0_pos"/>
+        <rotationref ref="LArTopModule_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArTopWall"/>
+        <positionref ref="LArTopModule_el0_1_pos"/>
+        <rotationref ref="LArTopModule_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArTopWall"/>
+        <positionref ref="LArTopModule_el1_1_pos"/>
+        <rotationref ref="LArTopModule_rot1"/>
+      </physvol>
+    </volume>
+    <volume name="volArgonCube">
+      <materialref ref="LAr"/>
+      <solidref ref="ArgonCube"/>
+      <physvol>
+        <volumeref ref="volLArBotModule"/>
+        <positionref ref="ArgonCubevolLArBotModule0_pos"/>
+        <rotationref ref="ArgonCube_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volArgonCubeActive"/>
+        <positionref ref="ArgonCubevolArgonCubeActive0_pos"/>
+        <rotationref ref="ArgonCube_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volLArTopModule"/>
+        <positionref ref="ArgonCubevolLArTopModule0_pos"/>
+        <rotationref ref="ArgonCube_rot"/>
+      </physvol>
+    </volume>
     <volume name="volCryostatInnerBath_OuterTubTorusInnerTub">
       <materialref ref="LAr"/>
       <solidref ref="CryostatInnerBath_OuterTubTorusInnerTub"/>
+      <physvol>
+        <volumeref ref="volArgonCube"/>
+        <positionref ref="CryostatInnerBathvolArgonCube_pos"/>
+        <rotationref ref="CryostatInnerBathvolArgonCube_rot"/>
+      </physvol>
     </volume>
     <volume name="volCryostatInnerWall_OuterTubTorusInnerTub">
       <materialref ref="SSteel304"/>
@@ -609,7 +1017,7 @@
       </physvol>
     </volume>
     <volume name="volCryostatInsulation_OuterTubTorusInnerTub">
-      <materialref ref="LAr"/>
+      <materialref ref="NoGas"/>
       <solidref ref="CryostatInsulation_OuterTubTorusInnerTub"/>
       <physvol>
         <volumeref ref="volCryostatInnerWall_OuterTubTorusInnerTub"/>
@@ -627,7 +1035,7 @@
       </physvol>
     </volume>
     <volume name="volArgonCubeCryostat">
-      <materialref ref="Air"/>
+      <materialref ref="LAr"/>
       <solidref ref="ArgonCubeCryostat"/>
       <physvol>
         <volumeref ref="volCryostatOuterWall_OuterTubTorusInnerTub"/>
