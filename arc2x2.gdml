@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
   <define>
-    <position name="CryostatOuterWallTorus_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
-    <position name="CryostatOuterWallInnerTub_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
+    <position name="CryostatInnerBathTorus_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
+    <position name="CryostatInnerBathInnerTub_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
+    <position name="CryostatInnerWallTorus_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
+    <position name="CryostatInnerWallInnerTub_pos" unit="cm" x="0.0" y="0.0" z="-102.5"/>
+    <position name="CryostatInnerWallvolCryostatInnerBath_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="CryostatInnerWallvolCryostatInnerBath_OuterTubTorusInnerTub_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="CryostatInsulationTorus_pos" unit="cm" x="0.0" y="0.0" z="-125.0"/>
+    <position name="CryostatInsulationInnerTub_pos" unit="cm" x="0.0" y="0.0" z="-125.0"/>
+    <position name="CryostatInsulationvolCryostatInnerWall_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="CryostatInsulationvolCryostatInnerWall_OuterTubTorusInnerTub_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="CryostatOuterWallTorus_pos" unit="cm" x="0.0" y="0.0" z="-125.0"/>
+    <position name="CryostatOuterWallInnerTub_pos" unit="cm" x="0.0" y="0.0" z="-125.0"/>
+    <position name="CryostatOuterWallvolCryostatInsulation_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="CryostatOuterWallvolCryostatInsulation_OuterTubTorusInnerTub_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
     <rotation name="ArgonCubeCryostat_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
     <position name="ArgonCubeCryostatvolCryostatOuterWall_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <rotation name="ArgonCubeDetector_rot" unit="degree" x="0" y="0" z="0"/>
     <position name="ArgonCubeDetectorvolArgonCubeCryostat0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
-    <position name="volArgonCubeDetector_pos" unit="cm" x="0.0" y="-347.5" z="0.0"/>
+    <position name="volArgonCubeDetector_pos" unit="cm" x="0.0" y="-324.0" z="0.0"/>
     <rotation name="volArgonCubeDetector_rot" unit="degree" x="90" y="0" z="0"/>
     <rotation name="noRotate" unit="degree" x="0" y="0" z="0"/>
     <rotation name="r90aboutX" unit="degree" x="90" y="0" z="0"/>
@@ -512,9 +524,54 @@
     </material>
   </materials>
   <solids>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatOuterWallOuterTub" rmax="106.0" rmin="0.0" startphi="0.0" z="205.0"/>
-    <torus aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatOuterWallTorus" rmax="50.0" rmin="0.0" rtor="56.0" startphi="0.0"/>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatOuterWallInnerTub" rmax="56.0" rmin="0.0" startphi="0.0" z="100.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerBathOuterTub" rmax="99.0" rmin="0.0" startphi="0.0" z="205.0"/>
+    <torus aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerBathTorus" rmax="25.0" rmin="0.0" rtor="74.0" startphi="0.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerBathInnerTub" rmax="74.0" rmin="0.0" startphi="0.0" z="50.0"/>
+    <union name="CryostatInnerBath_OuterTubTorus">
+      <first ref="CryostatInnerBathOuterTub"/>
+      <second ref="CryostatInnerBathTorus"/>
+      <positionref ref="CryostatInnerBathTorus_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <union name="CryostatInnerBath_OuterTubTorusInnerTub">
+      <first ref="CryostatInnerBath_OuterTubTorus"/>
+      <second ref="CryostatInnerBathInnerTub"/>
+      <positionref ref="CryostatInnerBathInnerTub_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerWallOuterTub" rmax="100.0" rmin="0.0" startphi="0.0" z="205.0"/>
+    <torus aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerWallTorus" rmax="26.0" rmin="0.0" rtor="74.0" startphi="0.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInnerWallInnerTub" rmax="74.0" rmin="0.0" startphi="0.0" z="52.0"/>
+    <union name="CryostatInnerWall_OuterTubTorus">
+      <first ref="CryostatInnerWallOuterTub"/>
+      <second ref="CryostatInnerWallTorus"/>
+      <positionref ref="CryostatInnerWallTorus_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <union name="CryostatInnerWall_OuterTubTorusInnerTub">
+      <first ref="CryostatInnerWall_OuterTubTorus"/>
+      <second ref="CryostatInnerWallInnerTub"/>
+      <positionref ref="CryostatInnerWallInnerTub_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInsulationOuterTub" rmax="105.0" rmin="0.0" startphi="0.0" z="250.0"/>
+    <torus aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInsulationTorus" rmax="50.0" rmin="0.0" rtor="55.0" startphi="0.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInsulationInnerTub" rmax="55.0" rmin="0.0" startphi="0.0" z="100.0"/>
+    <union name="CryostatInsulation_OuterTubTorus">
+      <first ref="CryostatInsulationOuterTub"/>
+      <second ref="CryostatInsulationTorus"/>
+      <positionref ref="CryostatInsulationTorus_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <union name="CryostatInsulation_OuterTubTorusInnerTub">
+      <first ref="CryostatInsulation_OuterTubTorus"/>
+      <second ref="CryostatInsulationInnerTub"/>
+      <positionref ref="CryostatInsulationInnerTub_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatOuterWallOuterTub" rmax="106.0" rmin="0.0" startphi="0.0" z="250.0"/>
+    <torus aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatOuterWallTorus" rmax="51.0" rmin="0.0" rtor="55.0" startphi="0.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatOuterWallInnerTub" rmax="55.0" rmin="0.0" startphi="0.0" z="102.0"/>
     <union name="CryostatOuterWall_OuterTubTorus">
       <first ref="CryostatOuterWallOuterTub"/>
       <second ref="CryostatOuterWallTorus"/>
@@ -527,8 +584,8 @@
       <positionref ref="CryostatOuterWallInnerTub_pos"/>
       <rotationref ref="identity"/>
     </union>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeCryostat" rmax="106.0" rmin="0.0" startphi="0.0" z="305.0"/>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeDetector" rmax="106.0" rmin="0.0" startphi="0.0" z="305.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeCryostat" rmax="106.0" rmin="0.0" startphi="0.0" z="352.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeDetector" rmax="106.0" rmin="0.0" startphi="0.0" z="352.0"/>
     <box lunit="cm" name="MinosNDHall" x="1000.0" y="1000.0" z="1000.0"/>
     <box lunit="cm" name="Ground" x="1000.0" y="20.0" z="1000.0"/>
     <box lunit="cm" name="world_shape" x="10000.0" y="10000.0" z="10000.0"/>
@@ -538,12 +595,39 @@
       <materialref ref="Rock"/>
       <solidref ref="Ground"/>
     </volume>
+    <volume name="volCryostatInnerBath_OuterTubTorusInnerTub">
+      <materialref ref="LAr"/>
+      <solidref ref="CryostatInnerBath_OuterTubTorusInnerTub"/>
+    </volume>
+    <volume name="volCryostatInnerWall_OuterTubTorusInnerTub">
+      <materialref ref="SSteel304"/>
+      <solidref ref="CryostatInnerWall_OuterTubTorusInnerTub"/>
+      <physvol>
+        <volumeref ref="volCryostatInnerBath_OuterTubTorusInnerTub"/>
+        <positionref ref="CryostatInnerWallvolCryostatInnerBath_OuterTubTorusInnerTub_pos"/>
+        <rotationref ref="CryostatInnerWallvolCryostatInnerBath_OuterTubTorusInnerTub_rot"/>
+      </physvol>
+    </volume>
+    <volume name="volCryostatInsulation_OuterTubTorusInnerTub">
+      <materialref ref="LAr"/>
+      <solidref ref="CryostatInsulation_OuterTubTorusInnerTub"/>
+      <physvol>
+        <volumeref ref="volCryostatInnerWall_OuterTubTorusInnerTub"/>
+        <positionref ref="CryostatInsulationvolCryostatInnerWall_OuterTubTorusInnerTub_pos"/>
+        <rotationref ref="CryostatInsulationvolCryostatInnerWall_OuterTubTorusInnerTub_rot"/>
+      </physvol>
+    </volume>
     <volume name="volCryostatOuterWall_OuterTubTorusInnerTub">
       <materialref ref="SSteel304"/>
       <solidref ref="CryostatOuterWall_OuterTubTorusInnerTub"/>
+      <physvol>
+        <volumeref ref="volCryostatInsulation_OuterTubTorusInnerTub"/>
+        <positionref ref="CryostatOuterWallvolCryostatInsulation_OuterTubTorusInnerTub_pos"/>
+        <rotationref ref="CryostatOuterWallvolCryostatInsulation_OuterTubTorusInnerTub_rot"/>
+      </physvol>
     </volume>
     <volume name="volArgonCubeCryostat">
-      <materialref ref="LAr"/>
+      <materialref ref="Air"/>
       <solidref ref="ArgonCubeCryostat"/>
       <physvol>
         <volumeref ref="volCryostatOuterWall_OuterTubTorusInnerTub"/>
@@ -552,7 +636,7 @@
       </physvol>
     </volume>
     <volume name="volArgonCubeDetector">
-      <materialref ref="LAr"/>
+      <materialref ref="Air"/>
       <solidref ref="ArgonCubeDetector"/>
       <physvol>
         <volumeref ref="volArgonCubeCryostat"/>

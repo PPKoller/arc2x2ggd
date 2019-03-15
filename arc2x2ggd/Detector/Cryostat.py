@@ -22,8 +22,9 @@ class CryostatBuilder(gegede.builder.Builder):
                                         startphi=self.startphi, deltaphi=self.deltaphi )                                        
         innertub_shape = geom.shapes.Tubs( self.name+'InnerTub', rmin=Q('0m'), rmax=self.caprtor, dz=self.caprmax )
 
+        shiftFor2 = Q(-1*outertub_shape.dz)
         relpos1 = geom.structure.Position(self.name+'Torus_pos', Q('0m'), Q('0m'), -1*outertub_shape.dz)
-        relpos2 = geom.structure.Position(self.name+'InnerTub_pos', Q('0m'), Q('0m'), -1*outertub_shape.dz )
+        relpos2 = geom.structure.Position(self.name+'InnerTub_pos', Q('0m'), Q('0m'), shiftFor2 )
 
         # make union of outer tub and torus 
         boolean_shape_1 = geom.shapes.Boolean( self.name+'_OuterTubTorus', type='union',
@@ -38,5 +39,19 @@ class CryostatBuilder(gegede.builder.Builder):
 
         boolean_lv = geom.structure.Volume('vol'+boolean_shape_2.name, material=self.material,
                                             shape=boolean_shape_2)
+        
+        self.add_volume( boolean_lv )      
 
-        self.add_volume( boolean_lv )                                                 
+        # place sub-builder
+        if len(self.get_builders()) < 1: return
+
+        sb = self.get_builder()
+        sb_lv = sb.get_volume()
+
+        sb_pos = geom.structure.Position(self.name+sb_lv.name+'_pos',
+                                         Q('0m'), Q('0m'), Q('0m'))
+        sb_rot = geom.structure.Rotation(self.name+sb_lv.name+'_rot',
+                                         '0.0deg', '0.0deg', '0.0deg')  
+        sb_pla = geom.structure.Placement(self.name+sb_lv.name+'_pla',
+                                            volume=sb_lv, pos=sb_pos, rot=sb_rot)
+        boolean_lv.placements.append(sb_pla.name)                                           
