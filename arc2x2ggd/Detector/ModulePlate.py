@@ -16,9 +16,9 @@ class ModulePlateBuilder(gegede.builder.Builder):
     def construct( self, geom ):
         # construct box shape
         main_shape = geom.shapes.Box( self.name, dx=self.dx, dy=self.dy, dz=self.dz )
-    
+
         # subtract out feedthroughs
-        boolean_shape = []
+        boolean_shapes = [main_shape]
         boolean_lv = []
         assert(len(self.positions) == len(self.subtractions))
         for i, (sub, pos) in enumerate(zip(self.subtractions, self.positions)):
@@ -26,7 +26,8 @@ class ModulePlateBuilder(gegede.builder.Builder):
             ftsub_shape = geom.shapes.Tubs( self.name+'FTSubtractionTub'+str(i), rmin=Q('0m'), rmax=sub, dz=Q('1m') )
             relpos = geom.structure.Position(self.name+'FTSubtractionTub'+str(i)+'_pos', pos[0], pos[1], pos[2])
             # subtract
-            boolean_shape = geom.shapes.Boolean( self.name+'FTSubtraction'+str(i), type='subtraction', first=main_shape, second=ftsub_shape, pos=relpos)
+            boolean_shape = geom.shapes.Boolean( self.name+'FTSubtraction'+str(i), type='subtraction', first=boolean_shapes[i], second=ftsub_shape, pos=relpos)
+            boolean_shapes.append(boolean_shape)
             boolean_lv = geom.structure.Volume('vol'+boolean_shape.name, material=self.material, shape=boolean_shape)
         
         self.add_volume( boolean_lv )      
