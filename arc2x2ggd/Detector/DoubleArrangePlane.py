@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+
+# this now doesn't assume a box geometry for the subbuilder
+
 import gegede.builder
 from arc2x2ggd.Tools import localtools as ltools
 from gegede import Quantity as Q
@@ -10,7 +13,7 @@ class DoubleArrangePlaneBuilder(gegede.builder.Builder):
     def configure( self, halfDimension=None, dx=None, dy=None, dz=None,
                     material=None, NElements1=None, InsideGap1=None,
                     TranspV1=None, rotation1=None, NElements2=None,
-                    InsideGap2=None, TranspV2=None, IndependentVolumes=None, **kwds ):
+                    InsideGap2=None, TranspV2=None, IndependentVolumes=None, SubBDim=None, **kwds ):
         if halfDimension == None:
             halfDimension = {}
             halfDimension['dx'] = dx
@@ -21,6 +24,7 @@ class DoubleArrangePlaneBuilder(gegede.builder.Builder):
         self.NElements2, self.InsideGap2 = ( NElements2, InsideGap2 )
         self.TranspV1, self.rotation1 = ( TranspV1, rotation1 )
         self.TranspV2, self.IndependentVolumes = ( TranspV2, IndependentVolumes )
+        self.SubBDim = SubBDim
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def construct( self, geom ):
@@ -37,7 +41,7 @@ class DoubleArrangePlaneBuilder(gegede.builder.Builder):
 
         # get the sub-builder dimension, using its shape
         el_shape = geom.store.shapes.get(el_lv.shape)
-        el_dim = [el_shape.dx, el_shape.dy, el_shape.dz]
+        el_dim = [self.SubBDim[0], self.SubBDim[1], self.SubBDim[2]]
 
         # calculate half dimension of element plus the gap projected to the transportation vector
         sb_dim_v1 = [t*(d+0.5*self.InsideGap1) for t,d in zip(self.TranspV1,el_dim)]

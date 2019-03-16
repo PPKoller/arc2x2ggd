@@ -227,7 +227,6 @@ def placeComplexBuilders( slf, geom, main_lv, TranspV ):
     """
     # definition local rotation
     rotation = getRotation( slf, geom )
-    print rotation
     # check InsideGap
     InsideGap = getInsideGap( slf )
     # get the main dimensions
@@ -244,8 +243,6 @@ def placeComplexBuilders( slf, geom, main_lv, TranspV ):
             sb_dim = getShapeDimensions( sb_lv, geom )
             step = [ t*d for t,d in zip(TranspV, sb_dim) ]
             pos = [ p+s for p,s in zip(pos,step) ]
-            print "NAME = ", sb_lv.name
-            print rotation
 
             sb_pos = geom.structure.Position(slf.name+sb_lv.name+str(elem)+'_pos',
                                                 pos[0], pos[1], pos[2])

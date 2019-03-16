@@ -35,7 +35,6 @@ class ComplexSubDetectorBuilder(gegede.builder.Builder):
             ltools.addAuxParams( self, main_lv )
 
         self.add_volume( main_lv )
-        print self.rotation
         if self.NElements != None:
             TranspV = [0,0,1]
             if  self.TranspV != None:
