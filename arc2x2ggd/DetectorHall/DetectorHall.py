@@ -24,7 +24,7 @@ class DetectorHallBuilder(gegede.builder.Builder):
         sb = self.get_builder()
         det_lv = sb.get_volume()
         det_dim = ltools.getShapeDimensions(det_lv, geom)
-        displace = -1*(self.halfDimension['dy'] - det_dim[2]) 
+        displace = -1*self.halfDimension['dy'] + det_dim[2] 
         pos = [Q("0m"),displace,Q("0m")]
         #rot = [Q("0deg"),Q("0deg"),Q("0deg")]
       

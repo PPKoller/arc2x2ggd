@@ -3,7 +3,7 @@ import gegede.builder
 from arc2x2ggd.Tools import localtools as ltools
 from gegede import Quantity as Q
 
-class CryostatBuilder(gegede.builder.Builder):
+class BodyBuilder(gegede.builder.Builder):
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def configure( self, material=None, tubrmin=None, tubrmax=None, tubdz=None,

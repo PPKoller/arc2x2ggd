@@ -27,12 +27,13 @@ void materialDisplay(TString filename,Bool_t checkoverlaps=kFALSE,TString label=
 
     if (TString(volume->GetMaterial()->GetName()).Contains("Air")) volume->SetInvisible();
     if (TString(volume->GetMaterial()->GetName()).Contains("LAr")) volume->SetTransparency(80);
-    //if (TString(volume->GetMaterial()->GetName()).Contains("SSteel304")) volume->SetTransparency(50);
  
     Int_t daughters = volume->GetNdaughters();
     //cout << endl;
 		cout << volume->GetName() << endl;
     volume->SetLineColor(Kolor[volume->GetMaterial()->GetName()]);
+    if (TString(volume->GetName()).Contains("Connector")) volume->SetLineColor(kBlack);
+
   }
 
   geo2->GetTopVolume()->Draw("ogl");

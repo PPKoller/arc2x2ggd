@@ -8,7 +8,7 @@ from gegede import Quantity as Q
 # It's easier to construct these here since they wrap around 
 # the main body.
 
-class CryostatContainerBuilder(gegede.builder.Builder):
+class ContainerBuilder(gegede.builder.Builder):
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def configure( self, dz=None, rmax=None, rmin=None,

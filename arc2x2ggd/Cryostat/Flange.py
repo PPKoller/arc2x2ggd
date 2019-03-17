@@ -3,7 +3,7 @@ import gegede.builder
 from arc2x2ggd.Tools import localtools as ltools
 from gegede import Quantity as Q
 
-class CryostatFlangeBuilder(gegede.builder.Builder):
+class FlangeBuilder(gegede.builder.Builder):
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def configure( self, dz1=None, dz2=None, rmax=None, rmin1=None, rmin2=None,
