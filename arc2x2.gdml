@@ -669,8 +669,8 @@
       <positionref ref="CryostatOuterWallInnerTub_pos"/>
       <rotationref ref="identity"/>
     </union>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeCryostat" rmax="110.0" rmin="0.0" startphi="0.0" z="316.0"/>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeDetector" rmax="110.0" rmin="0.0" startphi="0.0" z="316.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeCryostat" rmax="125.0" rmin="0.0" startphi="0.0" z="316.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeDetector" rmax="125.0" rmin="0.0" startphi="0.0" z="316.0"/>
     <box lunit="cm" name="MinosNDHall" x="1000.0" y="316.0" z="1000.0"/>
     <box lunit="cm" name="Ground" x="1000.0" y="20.0" z="1000.0"/>
     <box lunit="cm" name="world_shape" x="10000.0" y="10000.0" z="10000.0"/>
