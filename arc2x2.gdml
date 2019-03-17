@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
   <define>
-    <position name="MiddleConnectorCorner1Rel_pos" unit="cm" x="0.0" y="28.65" z="0.0"/>
-    <position name="MiddleConnectorCorner2Rel_pos" unit="cm" x="0.0" y="-28.65" z="0.0"/>
-    <rotation name="MiddleConnectorCornerRel_rot" unit="degree" x="0" y="0" z="45"/>
-    <position name="CryostatTopvolMiddleConnectorUnion3_pos1" unit="cm" x="33.65" y="0.0" z="-19.0"/>
-    <rotation name="CryostatTopvolMiddleConnectorUnion3_rot1" unit="degree" x="0.0" y="0.0" z="90.0"/>
-    <position name="CryostatTopvolMiddleConnectorUnion3_pos2" unit="cm" x="0.0" y="33.65" z="-19.0"/>
-    <rotation name="CryostatTopvolMiddleConnectorUnion3_rot2" unit="degree" x="0.0" y="0.0" z="0.0"/>
-    <position name="CryostatTopvolMiddleConnectorUnion3_pos3" unit="cm" x="-33.65" y="0.0" z="-19.0"/>
-    <position name="CryostatTopvolMiddleConnectorUnion3_pos4" unit="cm" x="0.0" y="-33.65" z="-19.0"/>
+    <rotation name="CryostatTopvolLongConnector_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="CryostatTopvolLongConnector_pos1" unit="cm" x="-67.2" y="0.0" z="-19.0"/>
+    <position name="CryostatTopvolLongConnector_pos2" unit="cm" x="0.0" y="0.0" z="-19.0"/>
+    <position name="CryostatTopvolLongConnector_pos3" unit="cm" x="67.2" y="0.0" z="-19.0"/>
+    <rotation name="CryostatTopvolInnerConnector_rot1" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <rotation name="CryostatTopvolInnerConnector_rot2" unit="degree" x="0.0" y="0.0" z="90.0"/>
+    <position name="CryostatTopvolInnerConnector_pos1" unit="cm" x="-33.6" y="-67.2" z="-19.0"/>
+    <position name="CryostatTopvolInnerConnector_pos2" unit="cm" x="-33.6" y="0.0" z="-19.0"/>
+    <position name="CryostatTopvolInnerConnector_pos3" unit="cm" x="-33.6" y="67.2" z="-19.0"/>
+    <position name="CryostatTopvolInnerConnector_pos4" unit="cm" x="33.6" y="-67.2" z="-19.0"/>
+    <position name="CryostatTopvolInnerConnector_pos5" unit="cm" x="33.6" y="0.0" z="-19.0"/>
+    <position name="CryostatTopvolInnerConnector_pos6" unit="cm" x="33.6" y="67.2" z="-19.0"/>
     <position name="CryostatFlangeFlangeSubtractionRel_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="CryostatFlangeFlangeComponent2Rel_pos" unit="cm" x="0.0" y="0.0" z="-12"/>
     <position name="ModulePlateFTSubtractionTub0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
@@ -551,26 +554,8 @@
     </material>
   </materials>
   <solids>
-    <box lunit="cm" name="MiddleConnectorMidComp" x="10.0" y="57.3" z="2.0"/>
-    <box lunit="cm" name="MiddleConnectorCornerComp" x="7.07106781187" y="7.07106781187" z="2.0"/>
-    <union name="MiddleConnectorUnion1">
-      <first ref="MiddleConnectorMidComp"/>
-      <second ref="MiddleConnectorCornerComp"/>
-      <positionref ref="MiddleConnectorCorner1Rel_pos"/>
-      <rotationref ref="MiddleConnectorCornerRel_rot"/>
-    </union>
-    <union name="MiddleConnectorUnion2">
-      <first ref="MiddleConnectorMidComp"/>
-      <second ref="MiddleConnectorCornerComp"/>
-      <positionref ref="MiddleConnectorCorner2Rel_pos"/>
-      <rotationref ref="MiddleConnectorCornerRel_rot"/>
-    </union>
-    <union name="MiddleConnectorUnion3">
-      <first ref="MiddleConnectorUnion1"/>
-      <second ref="MiddleConnectorUnion2"/>
-      <positionref ref="center"/>
-      <rotationref ref="identity"/>
-    </union>
+    <box lunit="cm" name="LongConnector" x="10.0" y="144.4" z="2.0"/>
+    <box lunit="cm" name="InnerConnector" x="57.2" y="10.0" z="2.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatTop" rmax="110.0" rmin="0.0" startphi="0.0" z="40.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatFlangeFlangeComponent1" rmax="110.0" rmin="0.0" startphi="0.0" z="4.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatFlangeFlangeComponent2" rmax="110.0" rmin="105.0" startphi="0.0" z="20.0"/>
@@ -695,32 +680,61 @@
       <materialref ref="Rock"/>
       <solidref ref="Ground"/>
     </volume>
-    <volume name="volMiddleConnectorUnion3">
+    <volume name="volLongConnector">
       <materialref ref="SSteel304"/>
-      <solidref ref="MiddleConnectorUnion3"/>
+      <solidref ref="LongConnector"/>
+    </volume>
+    <volume name="volInnerConnector">
+      <materialref ref="SSteel304"/>
+      <solidref ref="InnerConnector"/>
     </volume>
     <volume name="volCryostatTop">
       <materialref ref="Air"/>
       <solidref ref="CryostatTop"/>
       <physvol>
-        <volumeref ref="volMiddleConnectorUnion3"/>
-        <positionref ref="CryostatTopvolMiddleConnectorUnion3_pos1"/>
-        <rotationref ref="CryostatTopvolMiddleConnectorUnion3_rot1"/>
+        <volumeref ref="volLongConnector"/>
+        <positionref ref="CryostatTopvolLongConnector_pos1"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
       </physvol>
       <physvol>
-        <volumeref ref="volMiddleConnectorUnion3"/>
-        <positionref ref="CryostatTopvolMiddleConnectorUnion3_pos2"/>
-        <rotationref ref="CryostatTopvolMiddleConnectorUnion3_rot2"/>
+        <volumeref ref="volLongConnector"/>
+        <positionref ref="CryostatTopvolLongConnector_pos2"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
       </physvol>
       <physvol>
-        <volumeref ref="volMiddleConnectorUnion3"/>
-        <positionref ref="CryostatTopvolMiddleConnectorUnion3_pos3"/>
-        <rotationref ref="CryostatTopvolMiddleConnectorUnion3_rot1"/>
+        <volumeref ref="volLongConnector"/>
+        <positionref ref="CryostatTopvolLongConnector_pos3"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
       </physvol>
       <physvol>
-        <volumeref ref="volMiddleConnectorUnion3"/>
-        <positionref ref="CryostatTopvolMiddleConnectorUnion3_pos4"/>
-        <rotationref ref="CryostatTopvolMiddleConnectorUnion3_rot2"/>
+        <volumeref ref="volInnerConnector"/>
+        <positionref ref="CryostatTopvolInnerConnector_pos1"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volInnerConnector"/>
+        <positionref ref="CryostatTopvolInnerConnector_pos2"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volInnerConnector"/>
+        <positionref ref="CryostatTopvolInnerConnector_pos3"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volInnerConnector"/>
+        <positionref ref="CryostatTopvolInnerConnector_pos4"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volInnerConnector"/>
+        <positionref ref="CryostatTopvolInnerConnector_pos5"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volInnerConnector"/>
+        <positionref ref="CryostatTopvolInnerConnector_pos6"/>
+        <rotationref ref="CryostatTopvolLongConnector_rot"/>
       </physvol>
     </volume>
     <volume name="volCryostatFlange">
