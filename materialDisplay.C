@@ -39,4 +39,10 @@ void materialDisplay(TString filename,Bool_t checkoverlaps=kFALSE,TString label=
   }
 
   geo2->GetTopVolume()->Draw("ogl");
+
+  TGLViewer * v = (TGLViewer *)gPad->GetViewer3D();
+  Double_t refPos[3] = {0,0,0};
+  v->SetGuideState(TGLUtil::kAxesOrigin, kTRUE, kTRUE, refPos);
+  v->DrawGuides();
+
 }
