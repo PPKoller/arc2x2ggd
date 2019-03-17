@@ -2,19 +2,27 @@
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
   <define>
     <rotation name="CryostatTopvolLongConnector_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
-    <position name="CryostatTopvolLongConnector_pos1" unit="cm" x="-67.2" y="0.0" z="-19.0"/>
-    <position name="CryostatTopvolLongConnector_pos2" unit="cm" x="0.0" y="0.0" z="-19.0"/>
-    <position name="CryostatTopvolLongConnector_pos3" unit="cm" x="67.2" y="0.0" z="-19.0"/>
+    <position name="CryostatTopvolLongConnector_pos1" unit="cm" x="-67.2" y="0.0" z="0.0"/>
+    <position name="CryostatTopvolLongConnector_pos2" unit="cm" x="0.0" y="0.0" z="0.0"/>
+    <position name="CryostatTopvolLongConnector_pos3" unit="cm" x="67.2" y="0.0" z="0.0"/>
     <rotation name="CryostatTopvolInnerConnector_rot1" unit="degree" x="0.0" y="0.0" z="0.0"/>
     <rotation name="CryostatTopvolInnerConnector_rot2" unit="degree" x="0.0" y="0.0" z="90.0"/>
-    <position name="CryostatTopvolInnerConnector_pos1" unit="cm" x="-33.6" y="-67.2" z="-19.0"/>
-    <position name="CryostatTopvolInnerConnector_pos2" unit="cm" x="-33.6" y="0.0" z="-19.0"/>
-    <position name="CryostatTopvolInnerConnector_pos3" unit="cm" x="-33.6" y="67.2" z="-19.0"/>
-    <position name="CryostatTopvolInnerConnector_pos4" unit="cm" x="33.6" y="-67.2" z="-19.0"/>
-    <position name="CryostatTopvolInnerConnector_pos5" unit="cm" x="33.6" y="0.0" z="-19.0"/>
-    <position name="CryostatTopvolInnerConnector_pos6" unit="cm" x="33.6" y="67.2" z="-19.0"/>
+    <position name="CryostatTopvolInnerConnector_pos1" unit="cm" x="-33.6" y="-67.2" z="0.0"/>
+    <position name="CryostatTopvolInnerConnector_pos2" unit="cm" x="-33.6" y="0.0" z="0.0"/>
+    <position name="CryostatTopvolInnerConnector_pos3" unit="cm" x="-33.6" y="67.2" z="0.0"/>
+    <position name="CryostatTopvolInnerConnector_pos4" unit="cm" x="33.6" y="-67.2" z="0.0"/>
+    <position name="CryostatTopvolInnerConnector_pos5" unit="cm" x="33.6" y="0.0" z="0.0"/>
+    <position name="CryostatTopvolInnerConnector_pos6" unit="cm" x="33.6" y="67.2" z="0.0"/>
     <position name="CryostatFlangeFlangeSubtractionRel_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="CryostatFlangeFlangeComponent2Rel_pos" unit="cm" x="0.0" y="0.0" z="-12"/>
+    <position name="CryostatFlangeFTSubtraction1Rel0_pos" unit="cm" x="84.0" y="-15.100000000000001" z="0.0"/>
+    <position name="CryostatFlangeFTSubtraction2Rel0_pos" unit="cm" x="84.0" y="15.100000000000001" z="0.0"/>
+    <position name="CryostatFlangeFTSubtraction1Rel1_pos" unit="cm" x="-15.099999999999994" y="-84.0" z="0.0"/>
+    <position name="CryostatFlangeFTSubtraction2Rel1_pos" unit="cm" x="15.100000000000007" y="-84.0" z="0.0"/>
+    <position name="CryostatFlangeFTSubtraction1Rel2_pos" unit="cm" x="-84.0" y="15.099999999999989" z="0.0"/>
+    <position name="CryostatFlangeFTSubtraction2Rel2_pos" unit="cm" x="-84.0" y="-15.100000000000012" z="0.0"/>
+    <position name="CryostatFlangeFTSubtraction1Rel3_pos" unit="cm" x="15.099999999999987" y="84.0" z="0.0"/>
+    <position name="CryostatFlangeFTSubtraction2Rel3_pos" unit="cm" x="-15.100000000000016" y="84.0" z="0.0"/>
     <position name="ModulePlateFTSubtractionTub0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="ModulePlateFTSubtractionTub1_pos" unit="cm" x="0.0" y="20" z="0.0"/>
     <position name="ModulePlateFTSubtractionTub2_pos" unit="cm" x="-20" y="0.0" z="0.0"/>
@@ -39,14 +47,33 @@
     <position name="CryostatOuterWallInnerTub_pos" unit="cm" x="0.0" y="0.0" z="-110.0"/>
     <position name="CryostatOuterWallvolCryostatInsulation_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <rotation name="CryostatOuterWallvolCryostatInsulation_OuterTubTorusInnerTub_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
-    <position name="ArgonCubeCryostatvolCryostatTop_pos" unit="cm" x="0.0" y="0.0" z="138.0"/>
+    <position name="CryostatLegComponent2Rel_pos" unit="cm" x="0.0" y="0.0" z="-39.25"/>
+    <position name="CryostatBottomvolCryostatLeg_pos1" unit="cm" x="78.48885271170678" y="78.48885271170678" z="0.0"/>
+    <rotation name="CryostatBottomvolCryostatLeg_rot1" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="CryostatBottomvolCryostatLeg_pos2" unit="cm" x="-78.48885271170678" y="78.48885271170678" z="0.0"/>
+    <rotation name="CryostatBottomvolCryostatLeg_rot2" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="CryostatBottomvolCryostatLeg_pos3" unit="cm" x="-78.48885271170678" y="-78.48885271170678" z="0.0"/>
+    <rotation name="CryostatBottomvolCryostatLeg_rot3" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="CryostatBottomvolCryostatLeg_pos4" unit="cm" x="78.48885271170678" y="-78.48885271170678" z="0.0"/>
+    <rotation name="CryostatBottomvolCryostatLeg_rot4" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="CryostatBottomvolCryostatLegConnector_pos1" unit="cm" x="78.48885271170678" y="0.0" z="-29.25"/>
+    <rotation name="CryostatBottomvolCryostatLegConnector_rot1" unit="degree" x="90.0" y="0.0" z="0.0"/>
+    <position name="CryostatBottomvolCryostatLegConnector_pos2" unit="cm" x="0.0" y="78.48885271170678" z="-29.25"/>
+    <rotation name="CryostatBottomvolCryostatLegConnector_rot2" unit="degree" x="0.0" y="90.0" z="0.0"/>
+    <position name="CryostatBottomvolCryostatLegConnector_pos3" unit="cm" x="-78.48885271170678" y="0.0" z="-29.25"/>
+    <rotation name="CryostatBottomvolCryostatLegConnector_rot3" unit="degree" x="90.0" y="0.0" z="0.0"/>
+    <position name="CryostatBottomvolCryostatLegConnector_pos4" unit="cm" x="0.0" y="-78.48885271170678" z="-29.25"/>
+    <rotation name="CryostatBottomvolCryostatLegConnector_rot4" unit="degree" x="0.0" y="90.0" z="0.0"/>
+    <position name="ArgonCubeCryostatvolCryostatTop_pos" unit="cm" x="0.0" y="0.0" z="146.75"/>
     <rotation name="ArgonCubeCryostatvolCryostatTop_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
-    <position name="ArgonCubeCryostatvolCryostatFlange_pos" unit="cm" x="0.0" y="0.0" z="116.0"/>
+    <position name="ArgonCubeCryostatvolCryostatFlange_pos" unit="cm" x="0.0" y="0.0" z="143.75"/>
     <rotation name="ArgonCubeCryostatvolCryostatFlange_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
-    <position name="ArgonCubeCryostatvolCryostatInsertionPlate_pos" unit="cm" x="0.0" y="0.0" z="116.0"/>
+    <position name="ArgonCubeCryostatvolCryostatInsertionPlate_pos" unit="cm" x="0.0" y="0.0" z="143.75"/>
     <rotation name="ArgonCubeCryostatvolCryostatInsertionPlate_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
-    <position name="ArgonCubeCryostatvolCryostatOuterWall_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="4.0"/>
+    <position name="ArgonCubeCryostatvolCryostatOuterWall_OuterTubTorusInnerTub_pos" unit="cm" x="0.0" y="0.0" z="31.75"/>
     <rotation name="ArgonCubeCryostatvolCryostatOuterWall_OuterTubTorusInnerTub_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="ArgonCubeCryostatvolCryostatBottom_pos" unit="cm" x="0.0" y="0.0" z="-108.5"/>
+    <rotation name="ArgonCubeCryostatvolCryostatBottom_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
     <rotation name="ArgonCubeDetector_rot" unit="degree" x="0" y="0" z="0"/>
     <position name="ArgonCubeDetectorvolArgonCubeCryostat0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="volArgonCubeDetector_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
@@ -64,7 +91,7 @@
     <rotation name="r90aboutYminusZ" unit="degree" x="0" y="-90" z="90"/>
     <position name="volGround_pos" unit="cm" x="0.0" y="-10" z="0.0"/>
     <rotation name="volGround_rot" unit="degree" x="0" y="0" z="0"/>
-    <position name="volMinosNDHall_pos" unit="cm" x="0.0" y="158.0" z="0.0"/>
+    <position name="volMinosNDHall_pos" unit="cm" x="0.0" y="147.75" z="0.0"/>
     <rotation name="volMinosNDHall_rot" unit="degree" x="0" y="0" z="0"/>
     <position name="center"/>
     <rotation name="identity"/>
@@ -556,7 +583,7 @@
   <solids>
     <box lunit="cm" name="LongConnector" x="10.0" y="144.4" z="2.0"/>
     <box lunit="cm" name="InnerConnector" x="57.2" y="10.0" z="2.0"/>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatTop" rmax="110.0" rmin="0.0" startphi="0.0" z="40.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatTop" rmax="110.0" rmin="0.0" startphi="0.0" z="2.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatFlangeFlangeComponent1" rmax="110.0" rmin="0.0" startphi="0.0" z="4.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatFlangeFlangeComponent2" rmax="110.0" rmin="105.0" startphi="0.0" z="20.0"/>
     <box lunit="cm" name="CryostatFlangeFlangeComponent3" x="134.0" y="134.0" z="8.0"/>
@@ -566,8 +593,58 @@
       <positionref ref="CryostatFlangeFlangeSubtractionRel_pos"/>
       <rotationref ref="identity"/>
     </subtraction>
-    <union name="CryostatFlange">
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatFlangeFTComponent1" rmax="7.5" rmin="0.0" startphi="0.0" z="16.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatFlangeFTComponent2" rmax="5.1" rmin="0.0" startphi="0.0" z="16.0"/>
+    <subtraction name="CryostatFlangeFTSubtraction10">
       <first ref="CryostatFlangeFlangeSubtraction"/>
+      <second ref="CryostatFlangeFTComponent1"/>
+      <positionref ref="CryostatFlangeFTSubtraction1Rel0_pos"/>
+      <rotationref ref="identity"/>
+    </subtraction>
+    <subtraction name="CryostatFlangeFTSubtraction20">
+      <first ref="CryostatFlangeFTSubtraction10"/>
+      <second ref="CryostatFlangeFTComponent2"/>
+      <positionref ref="CryostatFlangeFTSubtraction2Rel0_pos"/>
+      <rotationref ref="identity"/>
+    </subtraction>
+    <subtraction name="CryostatFlangeFTSubtraction11">
+      <first ref="CryostatFlangeFTSubtraction20"/>
+      <second ref="CryostatFlangeFTComponent1"/>
+      <positionref ref="CryostatFlangeFTSubtraction1Rel1_pos"/>
+      <rotationref ref="identity"/>
+    </subtraction>
+    <subtraction name="CryostatFlangeFTSubtraction21">
+      <first ref="CryostatFlangeFTSubtraction11"/>
+      <second ref="CryostatFlangeFTComponent2"/>
+      <positionref ref="CryostatFlangeFTSubtraction2Rel1_pos"/>
+      <rotationref ref="identity"/>
+    </subtraction>
+    <subtraction name="CryostatFlangeFTSubtraction12">
+      <first ref="CryostatFlangeFTSubtraction21"/>
+      <second ref="CryostatFlangeFTComponent1"/>
+      <positionref ref="CryostatFlangeFTSubtraction1Rel2_pos"/>
+      <rotationref ref="identity"/>
+    </subtraction>
+    <subtraction name="CryostatFlangeFTSubtraction22">
+      <first ref="CryostatFlangeFTSubtraction12"/>
+      <second ref="CryostatFlangeFTComponent2"/>
+      <positionref ref="CryostatFlangeFTSubtraction2Rel2_pos"/>
+      <rotationref ref="identity"/>
+    </subtraction>
+    <subtraction name="CryostatFlangeFTSubtraction13">
+      <first ref="CryostatFlangeFTSubtraction22"/>
+      <second ref="CryostatFlangeFTComponent1"/>
+      <positionref ref="CryostatFlangeFTSubtraction1Rel3_pos"/>
+      <rotationref ref="identity"/>
+    </subtraction>
+    <subtraction name="CryostatFlangeFTSubtraction23">
+      <first ref="CryostatFlangeFTSubtraction13"/>
+      <second ref="CryostatFlangeFTComponent2"/>
+      <positionref ref="CryostatFlangeFTSubtraction2Rel3_pos"/>
+      <rotationref ref="identity"/>
+    </subtraction>
+    <union name="CryostatFlange">
+      <first ref="CryostatFlangeFTSubtraction23"/>
       <second ref="CryostatFlangeFlangeComponent2"/>
       <positionref ref="CryostatFlangeFlangeComponent2Rel_pos"/>
       <rotationref ref="identity"/>
@@ -669,9 +746,19 @@
       <positionref ref="CryostatOuterWallInnerTub_pos"/>
       <rotationref ref="identity"/>
     </union>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeCryostat" rmax="125.0" rmin="0.0" startphi="0.0" z="316.0"/>
-    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeDetector" rmax="125.0" rmin="0.0" startphi="0.0" z="316.0"/>
-    <box lunit="cm" name="MinosNDHall" x="1000.0" y="316.0" z="1000.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatLegComponent1" rmax="6.0" rmin="0.0" startphi="0.0" z="76.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatLegComponent2" rmax="11.0" rmin="0.0" startphi="0.0" z="2.5"/>
+    <union name="CryostatLeg">
+      <first ref="CryostatLegComponent1"/>
+      <second ref="CryostatLegComponent2"/>
+      <positionref ref="CryostatLegComponent2Rel_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatLegConnector" rmax="2.5" rmin="2.2" startphi="0.0" z="146.5"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatBottom" rmax="125.0" rmin="105.0" startphi="0.0" z="78.5"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeCryostat" rmax="125.0" rmin="0.0" startphi="0.0" z="295.5"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="ArgonCubeDetector" rmax="125.0" rmin="0.0" startphi="0.0" z="295.5"/>
+    <box lunit="cm" name="MinosNDHall" x="1000.0" y="295.5" z="1000.0"/>
     <box lunit="cm" name="Ground" x="1000.0" y="20.0" z="1000.0"/>
     <box lunit="cm" name="world_shape" x="10000.0" y="10000.0" z="10000.0"/>
   </solids>
@@ -800,6 +887,58 @@
         <rotationref ref="CryostatOuterWallvolCryostatInsulation_OuterTubTorusInnerTub_rot"/>
       </physvol>
     </volume>
+    <volume name="volCryostatLeg">
+      <materialref ref="SSteel304"/>
+      <solidref ref="CryostatLeg"/>
+    </volume>
+    <volume name="volCryostatLegConnector">
+      <materialref ref="SSteel304"/>
+      <solidref ref="CryostatLegConnector"/>
+    </volume>
+    <volume name="volCryostatBottom">
+      <materialref ref="Air"/>
+      <solidref ref="CryostatBottom"/>
+      <physvol>
+        <volumeref ref="volCryostatLeg"/>
+        <positionref ref="CryostatBottomvolCryostatLeg_pos1"/>
+        <rotationref ref="CryostatBottomvolCryostatLeg_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatLeg"/>
+        <positionref ref="CryostatBottomvolCryostatLeg_pos2"/>
+        <rotationref ref="CryostatBottomvolCryostatLeg_rot2"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatLeg"/>
+        <positionref ref="CryostatBottomvolCryostatLeg_pos3"/>
+        <rotationref ref="CryostatBottomvolCryostatLeg_rot3"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatLeg"/>
+        <positionref ref="CryostatBottomvolCryostatLeg_pos4"/>
+        <rotationref ref="CryostatBottomvolCryostatLeg_rot4"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatLegConnector"/>
+        <positionref ref="CryostatBottomvolCryostatLegConnector_pos1"/>
+        <rotationref ref="CryostatBottomvolCryostatLegConnector_rot1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatLegConnector"/>
+        <positionref ref="CryostatBottomvolCryostatLegConnector_pos2"/>
+        <rotationref ref="CryostatBottomvolCryostatLegConnector_rot2"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatLegConnector"/>
+        <positionref ref="CryostatBottomvolCryostatLegConnector_pos3"/>
+        <rotationref ref="CryostatBottomvolCryostatLegConnector_rot3"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatLegConnector"/>
+        <positionref ref="CryostatBottomvolCryostatLegConnector_pos4"/>
+        <rotationref ref="CryostatBottomvolCryostatLegConnector_rot4"/>
+      </physvol>
+    </volume>
     <volume name="volArgonCubeCryostat">
       <materialref ref="Air"/>
       <solidref ref="ArgonCubeCryostat"/>
@@ -822,6 +961,11 @@
         <volumeref ref="volCryostatOuterWall_OuterTubTorusInnerTub"/>
         <positionref ref="ArgonCubeCryostatvolCryostatOuterWall_OuterTubTorusInnerTub_pos"/>
         <rotationref ref="ArgonCubeCryostatvolCryostatOuterWall_OuterTubTorusInnerTub_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatBottom"/>
+        <positionref ref="ArgonCubeCryostatvolCryostatBottom_pos"/>
+        <rotationref ref="ArgonCubeCryostatvolCryostatBottom_rot"/>
       </physvol>
     </volume>
     <volume name="volArgonCubeDetector">
