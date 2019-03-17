@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
   <define>
+    <position name="Feedthrough160FTRel_pos" unit="cm" x="0.0" y="0.0" z="8.25"/>
+    <position name="Feedthrough100FTRel_pos" unit="cm" x="0.0" y="0.0" z="6.75"/>
     <rotation name="CryostatTopvolLongConnector_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
     <position name="CryostatTopvolLongConnector_pos1" unit="cm" x="-67.2" y="0.0" z="0.0"/>
     <position name="CryostatTopvolLongConnector_pos2" unit="cm" x="0.0" y="0.0" z="0.0"/>
@@ -13,6 +15,14 @@
     <position name="CryostatTopvolInnerConnector_pos4" unit="cm" x="33.6" y="-67.2" z="0.0"/>
     <position name="CryostatTopvolInnerConnector_pos5" unit="cm" x="33.6" y="0.0" z="0.0"/>
     <position name="CryostatTopvolInnerConnector_pos6" unit="cm" x="33.6" y="67.2" z="0.0"/>
+    <position name="CryostatTop100FT0_pos" unit="cm" x="84.0" y="-15.100000000000001" z="6.25"/>
+    <position name="CryostatTop160FT0_pos" unit="cm" x="84.0" y="15.100000000000001" z="4.75"/>
+    <position name="CryostatTop100FT1_pos" unit="cm" x="-15.099999999999994" y="-84.0" z="6.25"/>
+    <position name="CryostatTop160FT1_pos" unit="cm" x="15.100000000000007" y="-84.0" z="4.75"/>
+    <position name="CryostatTop100FT2_pos" unit="cm" x="-84.0" y="15.099999999999989" z="6.25"/>
+    <position name="CryostatTop160FT2_pos" unit="cm" x="-84.0" y="-15.100000000000012" z="4.75"/>
+    <position name="CryostatTop100FT3_pos" unit="cm" x="15.099999999999987" y="84.0" z="6.25"/>
+    <position name="CryostatTop160FT3_pos" unit="cm" x="-15.100000000000016" y="84.0" z="4.75"/>
     <position name="CryostatFlangeFlangeSubtractionRel_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="CryostatFlangeFlangeComponent2Rel_pos" unit="cm" x="0.0" y="0.0" z="-12"/>
     <position name="CryostatFlangeFTSubtraction1Rel0_pos" unit="cm" x="84.0" y="-15.100000000000001" z="0.0"/>
@@ -583,6 +593,22 @@
   <solids>
     <box lunit="cm" name="LongConnector" x="10.0" y="144.4" z="2.0"/>
     <box lunit="cm" name="InnerConnector" x="57.2" y="10.0" z="2.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="Feedthrough160Head" rmax="10.1" rmin="0.0" startphi="0.0" z="2.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="Feedthrough160Neck" rmax="7.8" rmin="7.5" startphi="0.0" z="14.5"/>
+    <union name="Feedthrough160">
+      <first ref="Feedthrough160Neck"/>
+      <second ref="Feedthrough160Head"/>
+      <positionref ref="Feedthrough160FTRel_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="Feedthrough100Head" rmax="7.5" rmin="0.0" startphi="0.0" z="2.0"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="Feedthrough100Neck" rmax="5.4" rmin="5.1" startphi="0.0" z="11.5"/>
+    <union name="Feedthrough100">
+      <first ref="Feedthrough100Neck"/>
+      <second ref="Feedthrough100Head"/>
+      <positionref ref="Feedthrough100FTRel_pos"/>
+      <rotationref ref="identity"/>
+    </union>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatTop" rmax="110.0" rmin="0.0" startphi="0.0" z="2.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatFlangeFlangeComponent1" rmax="110.0" rmin="0.0" startphi="0.0" z="4.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatFlangeFlangeComponent2" rmax="110.0" rmin="105.0" startphi="0.0" z="20.0"/>
@@ -775,6 +801,14 @@
       <materialref ref="SSteel304"/>
       <solidref ref="InnerConnector"/>
     </volume>
+    <volume name="volFeedthrough160">
+      <materialref ref="SSteel304"/>
+      <solidref ref="Feedthrough160"/>
+    </volume>
+    <volume name="volFeedthrough100">
+      <materialref ref="SSteel304"/>
+      <solidref ref="Feedthrough100"/>
+    </volume>
     <volume name="volCryostatTop">
       <materialref ref="Air"/>
       <solidref ref="CryostatTop"/>
@@ -822,6 +856,46 @@
         <volumeref ref="volInnerConnector"/>
         <positionref ref="CryostatTopvolInnerConnector_pos6"/>
         <rotationref ref="CryostatTopvolLongConnector_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volFeedthrough160"/>
+        <positionref ref="CryostatTop100FT0_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volFeedthrough100"/>
+        <positionref ref="CryostatTop160FT0_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volFeedthrough160"/>
+        <positionref ref="CryostatTop100FT1_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volFeedthrough100"/>
+        <positionref ref="CryostatTop160FT1_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volFeedthrough160"/>
+        <positionref ref="CryostatTop100FT2_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volFeedthrough100"/>
+        <positionref ref="CryostatTop160FT2_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volFeedthrough160"/>
+        <positionref ref="CryostatTop100FT3_pos"/>
+        <rotationref ref="identity"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volFeedthrough100"/>
+        <positionref ref="CryostatTop160FT3_pos"/>
+        <rotationref ref="identity"/>
       </physvol>
     </volume>
     <volume name="volCryostatFlange">

@@ -2,14 +2,16 @@
 import gegede.builder
 from arc2x2ggd.Tools import localtools as ltools
 from gegede import Quantity as Q
+import numpy as np
 
 class TopBuilder(gegede.builder.Builder):
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
-    def configure( self, dz=None, rmax=None, rmin=None, material=None, shifts=None, **kwds ):
+    def configure( self, dz=None, rmax=None, rmin=None, material=None, shifts=None, positions=None, **kwds ):
         self.rmin, self.rmax, self.dz = (rmin, rmax, dz)
         self.material = material
         self.shifts = shifts
+        self.positions = positions
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def construct( self, geom ):
@@ -17,10 +19,12 @@ class TopBuilder(gegede.builder.Builder):
         main_lv = geom.structure.Volume('vol'+main_shape.name, material=self.material, shape=main_shape)
         self.add_volume( main_lv )   
 
-        # place the connectors
+        # get the builders
         sbs = self.get_builders()
         longcon_lv  = sbs[0].get_volume()
         innercon_lv = sbs[1].get_volume()
+        ft100_lv    = sbs[2].get_volume()
+        ft160_lv    = sbs[3].get_volume()
 
         # place long connectors
         midZ = -1*main_shape.dz + self.shifts[2]
@@ -55,7 +59,22 @@ class TopBuilder(gegede.builder.Builder):
             i = i + 1
             sb_pos = geom.structure.Position(self.name+innercon_lv.name+ '_pos'+str(i), innerR, step, midZ)
             sb_pla = geom.structure.Placement(self.name+innercon_lv.name+'_pla'+str(i), volume=innercon_lv, pos=sb_pos, rot=rot1)
-            main_lv.placements.append(sb_pla.name)            
+            main_lv.placements.append(sb_pla.name) 
+
+        # place feedthroughs
+        for i in range(0,4):
+            # rotate
+            theta = (np.pi/2.)*i
+            pos1 = [self.positions[0][0]*np.cos(theta) + self.positions[0][1]*np.sin(theta), -1*self.positions[0][0]*np.sin(theta) + self.positions[0][1]*np.cos(theta) ]
+            pos2 = [self.positions[1][0]*np.cos(theta) + self.positions[1][1]*np.sin(theta), -1*self.positions[1][0]*np.sin(theta) + self.positions[1][1]*np.cos(theta) ]
+
+            trelpos1 = geom.structure.Position(self.name+'100FT'+str(i)+'_pos', pos1[0], pos1[1], self.positions[0][2])
+            trelpos2 = geom.structure.Position(self.name+'160FT'+str(i)+'_pos', pos2[0], pos2[1], self.positions[1][2])  
+
+            ft100_pla = geom.structure.Placement(self.name+ft100_lv.name+'_pla'+str(i), volume=ft100_lv, pos=trelpos1)
+            ft160_pla = geom.structure.Placement(self.name+ft160_lv.name+'_pla'+str(i), volume=ft160_lv, pos=trelpos2)
+            main_lv.placements.append(ft100_pla.name) 
+            main_lv.placements.append(ft160_pla.name)         
 
 
 

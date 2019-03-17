@@ -34,6 +34,7 @@ void materialDisplay(TString filename,Bool_t checkoverlaps=kFALSE,TString label=
     volume->SetLineColor(Kolor[volume->GetMaterial()->GetName()]);
     if (TString(volume->GetName()).Contains("Connector")) volume->SetLineColor(kBlack);
     if (TString(volume->GetName()).Contains("ModulePlate")) volume->SetLineColor(kRed);
+    if (TString(volume->GetName()).Contains("Feedthrough")) volume->SetLineColor(kBlack);
 
   }
 
