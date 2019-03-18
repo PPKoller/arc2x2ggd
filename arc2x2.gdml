@@ -75,27 +75,27 @@
     <position name="LArLightLvolLArActive0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="LArLightLvolLightDsPlane0_pos" unit="cm" x="0.0" y="0.0" z="32.25"/>
     <rotation name="PixelPlaneL_rot1" unit="degree" x="0" y="0" z="0"/>
-    <position name="PixelPlaneL_el0_0_pos" unit="cm" x="0.0" y="-47.45" z="-15.75"/>
-    <position name="PixelPlaneL_el1_0_pos" unit="cm" x="0.0" y="-15.75" z="-15.75"/>
-    <position name="PixelPlaneL_el2_0_pos" unit="cm" x="0.0" y="15.95" z="-15.75"/>
-    <position name="PixelPlaneL_el3_0_pos" unit="cm" x="0.0" y="47.65" z="-15.75"/>
-    <position name="PixelPlaneL_el0_1_pos" unit="cm" x="0.0" y="-47.45" z="15.95"/>
-    <position name="PixelPlaneL_el1_1_pos" unit="cm" x="0.0" y="-15.75" z="15.95"/>
-    <position name="PixelPlaneL_el2_1_pos" unit="cm" x="0.0" y="15.95" z="15.95"/>
-    <position name="PixelPlaneL_el3_1_pos" unit="cm" x="0.0" y="47.65" z="15.95"/>
+    <position name="PixelPlaneL_el0_0_pos" unit="cm" x="0.0" y="-47.75" z="-15.85"/>
+    <position name="PixelPlaneL_el1_0_pos" unit="cm" x="0.0" y="-16.05" z="-15.85"/>
+    <position name="PixelPlaneL_el2_0_pos" unit="cm" x="0.0" y="15.65" z="-15.85"/>
+    <position name="PixelPlaneL_el3_0_pos" unit="cm" x="0.0" y="47.35" z="-15.85"/>
+    <position name="PixelPlaneL_el0_1_pos" unit="cm" x="0.0" y="-47.75" z="15.85"/>
+    <position name="PixelPlaneL_el1_1_pos" unit="cm" x="0.0" y="-16.05" z="15.85"/>
+    <position name="PixelPlaneL_el2_1_pos" unit="cm" x="0.0" y="15.65" z="15.85"/>
+    <position name="PixelPlaneL_el3_1_pos" unit="cm" x="0.0" y="47.35" z="15.85"/>
     <rotation name="LArLightR_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
     <position name="LArLightRvolLightUsPlane0_pos" unit="cm" x="0.0" y="0.0" z="-32.25"/>
     <position name="LArLightRvolLArActive0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="LArLightRvolLightDsPlane0_pos" unit="cm" x="0.0" y="0.0" z="32.25"/>
     <rotation name="PixelPlaneR_rot1" unit="degree" x="0" y="0" z="0"/>
-    <position name="PixelPlaneR_el0_0_pos" unit="cm" x="0.0" y="-47.45" z="-15.75"/>
-    <position name="PixelPlaneR_el1_0_pos" unit="cm" x="0.0" y="-15.75" z="-15.75"/>
-    <position name="PixelPlaneR_el2_0_pos" unit="cm" x="0.0" y="15.95" z="-15.75"/>
-    <position name="PixelPlaneR_el3_0_pos" unit="cm" x="0.0" y="47.65" z="-15.75"/>
-    <position name="PixelPlaneR_el0_1_pos" unit="cm" x="0.0" y="-47.45" z="15.95"/>
-    <position name="PixelPlaneR_el1_1_pos" unit="cm" x="0.0" y="-15.75" z="15.95"/>
-    <position name="PixelPlaneR_el2_1_pos" unit="cm" x="0.0" y="15.95" z="15.95"/>
-    <position name="PixelPlaneR_el3_1_pos" unit="cm" x="0.0" y="47.65" z="15.95"/>
+    <position name="PixelPlaneR_el0_0_pos" unit="cm" x="0.0" y="-47.75" z="-15.85"/>
+    <position name="PixelPlaneR_el1_0_pos" unit="cm" x="0.0" y="-16.05" z="-15.85"/>
+    <position name="PixelPlaneR_el2_0_pos" unit="cm" x="0.0" y="15.65" z="-15.85"/>
+    <position name="PixelPlaneR_el3_0_pos" unit="cm" x="0.0" y="47.35" z="-15.85"/>
+    <position name="PixelPlaneR_el0_1_pos" unit="cm" x="0.0" y="-47.75" z="15.85"/>
+    <position name="PixelPlaneR_el1_1_pos" unit="cm" x="0.0" y="-16.05" z="15.85"/>
+    <position name="PixelPlaneR_el2_1_pos" unit="cm" x="0.0" y="15.65" z="15.85"/>
+    <position name="PixelPlaneR_el3_1_pos" unit="cm" x="0.0" y="47.35" z="15.85"/>
     <rotation name="LArSubModule_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
     <position name="LArSubModulevolPixelPlaneL0_pos" unit="cm" x="-31.5" y="0.0" z="0.0"/>
     <position name="LArSubModulevolLArLightL0_pos" unit="cm" x="-15.7" y="0.0" z="0.0"/>
@@ -848,11 +848,11 @@
     <box lunit="cm" name="LArLightL" x="30.6" y="130.0" z="65.0"/>
     <box lunit="cm" name="ResistiveFieldBot" x="57.0" y="1.0" z="65.0"/>
     <box lunit="cm" name="PixelTileL" x="1.0" y="31.5" z="31.5"/>
-    <box lunit="cm" name="PixelPlaneL" x="1.0" y="126.6" z="63.2"/>
+    <box lunit="cm" name="PixelPlaneL" x="1.0" y="127.2" z="63.4"/>
     <box lunit="cm" name="LArCathode" x="0.8" y="130.0" z="65.0"/>
     <box lunit="cm" name="LArLightR" x="30.6" y="130.0" z="65.0"/>
     <box lunit="cm" name="PixelTileR" x="1.0" y="31.5" z="31.5"/>
-    <box lunit="cm" name="PixelPlaneR" x="1.0" y="126.6" z="63.2"/>
+    <box lunit="cm" name="PixelPlaneR" x="1.0" y="127.2" z="63.4"/>
     <box lunit="cm" name="LArSubModule" x="64.0" y="130.0" z="65.0"/>
     <box lunit="cm" name="ResistiveFieldTop" x="57.0" y="1.0" z="65.0"/>
     <box lunit="cm" name="LArActiveMod" x="65.0" y="132.0" z="65.0"/>
@@ -1734,7 +1734,7 @@
       <solidref ref="CryostatLegConnector"/>
     </volume>
     <volume name="volArgonCubeCryostat">
-      <materialref ref="LAr"/>
+      <materialref ref="Air"/>
       <solidref ref="ArgonCubeCryostat"/>
       <physvol>
         <volumeref ref="volCryostatTop"/>
