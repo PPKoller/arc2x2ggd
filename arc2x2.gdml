@@ -106,8 +106,8 @@
     <position name="LArActiveModvolResistiveFieldBot0_pos" unit="cm" x="0.0" y="-65.5" z="0.0"/>
     <position name="LArActiveModvolLArSubModule0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="LArActiveModvolResistiveFieldTop0_pos" unit="cm" x="0.0" y="65.5" z="0.0"/>
-    <position name="volLArActiveMod_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
-    <rotation name="volLArActiveMod_rot" unit="degree" x="0" y="0" z="0"/>
+    <rotation name="LArActiveModWall_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
+    <position name="LArActiveModWallvolLArActiveMod_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <rotation name="ArgonCubeActive_rot1" unit="degree" x="0" y="0" z="0"/>
     <position name="ArgonCubeActive_el0_0_pos" unit="cm" x="-33.5" y="0.0" z="-33.5"/>
     <position name="ArgonCubeActive_el1_0_pos" unit="cm" x="33.5" y="0.0" z="-33.5"/>
@@ -1310,7 +1310,6 @@
     <volume name="volLArActive">
       <materialref ref="LAr"/>
       <solidref ref="LArActive"/>
-      <auxiliary auxtype="SensDet" auxvalue="ArgonCube"/>
     </volume>
     <volume name="volLightDsPlane">
       <materialref ref="LAr"/>
@@ -1511,8 +1510,8 @@
       <solidref ref="LArActiveModWall"/>
       <physvol>
         <volumeref ref="volLArActiveMod"/>
-        <positionref ref="volLArActiveMod_pos"/>
-        <rotationref ref="volLArActiveMod_rot"/>
+        <positionref ref="LArActiveModWallvolLArActiveMod_pos"/>
+        <rotationref ref="LArActiveModWall_rot"/>
       </physvol>
     </volume>
     <volume name="volLArActiveModWall10">
@@ -1520,8 +1519,8 @@
       <solidref ref="LArActiveModWall"/>
       <physvol>
         <volumeref ref="volLArActiveMod"/>
-        <positionref ref="volLArActiveMod_pos"/>
-        <rotationref ref="volLArActiveMod_rot"/>
+        <positionref ref="LArActiveModWallvolLArActiveMod_pos"/>
+        <rotationref ref="LArActiveModWall_rot"/>
       </physvol>
     </volume>
     <volume name="volLArActiveModWall01">
@@ -1529,8 +1528,8 @@
       <solidref ref="LArActiveModWall"/>
       <physvol>
         <volumeref ref="volLArActiveMod"/>
-        <positionref ref="volLArActiveMod_pos"/>
-        <rotationref ref="volLArActiveMod_rot"/>
+        <positionref ref="LArActiveModWallvolLArActiveMod_pos"/>
+        <rotationref ref="LArActiveModWall_rot"/>
       </physvol>
     </volume>
     <volume name="volLArActiveModWall11">
@@ -1538,8 +1537,8 @@
       <solidref ref="LArActiveModWall"/>
       <physvol>
         <volumeref ref="volLArActiveMod"/>
-        <positionref ref="volLArActiveMod_pos"/>
-        <rotationref ref="volLArActiveMod_rot"/>
+        <positionref ref="LArActiveModWallvolLArActiveMod_pos"/>
+        <rotationref ref="LArActiveModWall_rot"/>
       </physvol>
     </volume>
     <volume name="volArgonCubeActive">
