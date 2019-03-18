@@ -24,11 +24,11 @@ class ModulePlateBuilder(gegede.builder.Builder):
         for i, (sub, pos) in enumerate(zip(self.subtractions, self.positions)):
             # feedthrough shape
             ftsub_shape = geom.shapes.Tubs( self.name+'FTSubtractionTub'+str(i), rmin=Q('0m'), rmax=sub, dz=Q('1m') )
-            relpos = geom.structure.Position(self.name+'FTSubtractionTub'+str(i)+'_pos', pos[0], pos[1], pos[2])
+            relpos = geom.structure.Position(self.name+'FTSubtractionTub'+str(i)+'_pos', pos[0], pos[1], Q('0m'))
             # subtract
             boolean_shape = geom.shapes.Boolean( self.name+'FTSubtraction'+str(i), type='subtraction', first=boolean_shapes[i], second=ftsub_shape, pos=relpos)
             boolean_shapes.append(boolean_shape)
             boolean_lv = geom.structure.Volume('vol'+boolean_shape.name, material=self.material, shape=boolean_shape)
         
-        self.add_volume( boolean_lv )      
+        self.add_volume( boolean_lv )    
 
