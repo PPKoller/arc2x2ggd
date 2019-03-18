@@ -74,6 +74,8 @@
     <rotation name="CryostatBottomvolCryostatLegConnector_rot3" unit="degree" x="90.0" y="0.0" z="0.0"/>
     <position name="CryostatBottomvolCryostatLegConnector_pos4" unit="cm" x="0.0" y="-78.48885271170678" z="-29.25"/>
     <rotation name="CryostatBottomvolCryostatLegConnector_rot4" unit="degree" x="0.0" y="90.0" z="0.0"/>
+    <position name="CryostatInletComponent1Rel_pos" unit="cm" x="0.0" y="0.0" z="14.35"/>
+    <position name="CryostatInletComponent2Rel_pos" unit="cm" x="0.0" y="0.0" z="-2.25"/>
     <position name="CryostatConnectionFTRel_pos" unit="cm" x="0.0" y="0.0" z="10.0"/>
     <position name="ArgonCubeCryostatvolCryostatTop_pos" unit="cm" x="0.0" y="0.0" z="146.75"/>
     <rotation name="ArgonCubeCryostatvolCryostatTop_rot" unit="degree" x="0.0" y="0.0" z="0.0"/>
@@ -91,6 +93,14 @@
     <rotation name="ArgonCubeCryostatvolCryostatConnection2_rot" unit="degree" x="90.0" y="-120.0" z="0.0"/>
     <position name="ArgonCubeCryostatvolCryostatConnection3_pos" unit="cm" x="103.5" y="0.0" z="-108.5"/>
     <rotation name="ArgonCubeCryostatvolCryostatConnection3_rot" unit="degree" x="0.0" y="-120.0" z="0.0"/>
+    <position name="ArgonCubeCryostatvolCryostatInlet1_pos" unit="cm" x="94.3000709479462" y="-79.12715475241298" z="137.15"/>
+    <rotation name="ArgonCubeCryostatvolCryostatInlet1_rot" unit="degree" x="90.0" y="-130" z="0.0"/>
+    <position name="ArgonCubeCryostatvolCryostatInlet2_pos" unit="cm" x="87.044844764064" y="-87.044844764064" z="137.15"/>
+    <rotation name="ArgonCubeCryostatvolCryostatInlet2_rot" unit="degree" x="90.0" y="-135" z="0.0"/>
+    <position name="ArgonCubeCryostatvolCryostatInlet3_pos" unit="cm" x="67.04506521034983" y="-103.2403469140817" z="137.15"/>
+    <rotation name="ArgonCubeCryostatvolCryostatInlet3_rot" unit="degree" x="90.0" y="-147" z="0.0"/>
+    <position name="ArgonCubeCryostatvolCryostatInlet4_pos" unit="cm" x="55.88623051793821" y="-109.68290312758808" z="137.15"/>
+    <rotation name="ArgonCubeCryostatvolCryostatInlet4_rot" unit="degree" x="90.0" y="-153" z="0.0"/>
     <rotation name="ArgonCubeDetector_rot" unit="degree" x="0" y="0" z="0"/>
     <position name="ArgonCubeDetectorvolArgonCubeCryostat0_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
     <position name="volArgonCubeDetector_pos" unit="cm" x="0.0" y="0.0" z="0.0"/>
@@ -789,6 +799,20 @@
     </union>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatLegConnector" rmax="2.5" rmin="2.2" startphi="0.0" z="146.5"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatBottom" rmax="125.0" rmin="105.0" startphi="0.0" z="78.5"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInletComponent2" rmax="1.2" rmin="1.1" startphi="0.0" z="26.2"/>
+    <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatInletComponent1" rmax="3.3" rmin="1.1" startphi="0.0" z="2.5"/>
+    <union name="CryostatInletUnion1">
+      <first ref="CryostatInletComponent2"/>
+      <second ref="CryostatInletComponent1"/>
+      <positionref ref="CryostatInletComponent1Rel_pos"/>
+      <rotationref ref="identity"/>
+    </union>
+    <union name="CryostatInlet">
+      <first ref="CryostatInletUnion1"/>
+      <second ref="CryostatInletComponent1"/>
+      <positionref ref="CryostatInletComponent2Rel_pos"/>
+      <rotationref ref="identity"/>
+    </union>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatConnectionHead" rmax="13.7" rmin="3.5" startphi="0.0" z="5.0"/>
     <tube aunit="radian" deltaphi="6.28318530718" lunit="cm" name="CryostatConnectionNeck" rmax="7.8" rmin="7.5" startphi="0.0" z="15.0"/>
     <union name="CryostatConnection">
@@ -1032,6 +1056,10 @@
       <materialref ref="SSteel304"/>
       <solidref ref="CryostatConnection"/>
     </volume>
+    <volume name="volCryostatInlet">
+      <materialref ref="SSteel304"/>
+      <solidref ref="CryostatInlet"/>
+    </volume>
     <volume name="volArgonCubeCryostat">
       <materialref ref="Air"/>
       <solidref ref="ArgonCubeCryostat"/>
@@ -1074,6 +1102,26 @@
         <volumeref ref="volCryostatConnection"/>
         <positionref ref="ArgonCubeCryostatvolCryostatConnection3_pos"/>
         <rotationref ref="ArgonCubeCryostatvolCryostatConnection3_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatInlet"/>
+        <positionref ref="ArgonCubeCryostatvolCryostatInlet1_pos"/>
+        <rotationref ref="ArgonCubeCryostatvolCryostatInlet1_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatInlet"/>
+        <positionref ref="ArgonCubeCryostatvolCryostatInlet2_pos"/>
+        <rotationref ref="ArgonCubeCryostatvolCryostatInlet2_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatInlet"/>
+        <positionref ref="ArgonCubeCryostatvolCryostatInlet3_pos"/>
+        <rotationref ref="ArgonCubeCryostatvolCryostatInlet3_rot"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="volCryostatInlet"/>
+        <positionref ref="ArgonCubeCryostatvolCryostatInlet4_pos"/>
+        <rotationref ref="ArgonCubeCryostatvolCryostatInlet4_rot"/>
       </physvol>
     </volume>
     <volume name="volArgonCubeDetector">
