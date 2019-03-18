@@ -4,11 +4,6 @@ from arc2x2ggd.Tools import localtools as ltools
 from gegede import Quantity as Q
 import numpy as np
 
-# This builder constructs the container for the cryostat.
-# This builder also constructs components of the top flange
-# It's easier to construct these here since they wrap around 
-# the main body.
-
 class ContainerBuilder(gegede.builder.Builder):
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
