@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name = 'arc2x2ggd',
-      version = '2.1.0',
+      version = '1.0.0',
       description = 'ArgonCube2x2 based on General Geometry Description',
       author = 'Patrick Koller and Hunter Sullivan',
       author_email = 'patrick.koller@lhep.unibe.ch, hunter.sullivan@mavs.uta.edu',
