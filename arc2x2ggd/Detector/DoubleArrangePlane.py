@@ -12,7 +12,7 @@ class DoubleArrangePlaneBuilder(gegede.builder.Builder):
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def configure( self, halfDimension=None, dx=None, dy=None, dz=None,
                     material=None, NElements1=None, InsideGap1=None,
-                    TranspV1=None, rotation1=None, NElements2=None,
+                    TranspV1=None, Rotation1=None, NElements2=None,
                     InsideGap2=None, TranspV2=None, IndependentVolumes=None, SubBDim=None, **kwds ):
         if halfDimension == None:
             halfDimension = {}
@@ -22,7 +22,7 @@ class DoubleArrangePlaneBuilder(gegede.builder.Builder):
         self.halfDimension, self.material = ( halfDimension, material )
         self.NElements1, self.InsideGap1 = ( NElements1, InsideGap1 )
         self.NElements2, self.InsideGap2 = ( NElements2, InsideGap2 )
-        self.TranspV1, self.rotation1 = ( TranspV1, rotation1 )
+        self.TranspV1, self.Rotation1 = ( TranspV1, Rotation1 )
         self.TranspV2, self.IndependentVolumes = ( TranspV2, IndependentVolumes )
         self.SubBDim = SubBDim
 
@@ -31,9 +31,9 @@ class DoubleArrangePlaneBuilder(gegede.builder.Builder):
         main_lv, main_hDim = ltools.main_lv( self, geom, "Box")
         self.add_volume( main_lv )
 
-        # definition local rotation
-        rotation1 = geom.structure.Rotation( self.name+'_rot1', str(self.rotation1[0]),
-                                            str(self.rotation1[1]),  str(self.rotation1[2]) )
+        # definition local Rotation
+        Rotation1 = geom.structure.Rotation( self.name+'_rot1', str(self.Rotation1[0]),
+                                            str(self.Rotation1[1]),  str(self.Rotation1[2]) )
 
         # get sub-builders and its logic volume
         sb = self.get_builder()
@@ -67,5 +67,5 @@ class DoubleArrangePlaneBuilder(gegede.builder.Builder):
                     el_lv_temp = el_lv
 
                 el_pla = geom.structure.Placement(self.name+"_el"+str(elem1)+'_'+str(elem2)+'_pla',
-                                                    volume=el_lv_temp, pos=el_pos, rot =rotation1)
+                                                    volume=el_lv_temp, pos=el_pos, rot =Rotation1)
                 main_lv.placements.append(el_pla.name)

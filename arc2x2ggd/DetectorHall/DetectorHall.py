@@ -6,7 +6,7 @@ from gegede import Quantity as Q
 class DetectorHallBuilder(gegede.builder.Builder):
 
     def configure(self, halfDimension=None, dx=None, dy=None, dz=None,
-                        material=None, rotation=None, **kwds):
+                        material=None, Rotation=None, **kwds):
         if halfDimension is None:
             halfDimension = {}
             halfDimension['dx'] = dx
@@ -14,7 +14,7 @@ class DetectorHallBuilder(gegede.builder.Builder):
             halfDimension['dz'] = dz
         self.halfDimension = halfDimension
         self.material = material 
-        self.rotation = rotation
+        self.Rotation = Rotation
 
     def construct(self, geom):
         main_lv, main_hDim = ltools.main_lv(self, geom, "Box")        
@@ -29,7 +29,7 @@ class DetectorHallBuilder(gegede.builder.Builder):
         #rot = [Q("0deg"),Q("0deg"),Q("0deg")]
       
         det_pos = geom.structure.Position( det_lv.name+'_pos', pos[0], pos[1], pos[2] )
-        det_rot = geom.structure.Rotation( det_lv.name+'_rot', self.rotation[0], self.rotation[1], self.rotation[2] )
+        det_rot = geom.structure.Rotation( det_lv.name+'_rot', self.Rotation[0], self.Rotation[1], self.Rotation[2] )
         det_pla = geom.structure.Placement( det_lv.name+'_pla', volume=det_lv, pos=det_pos, rot=det_rot )
         main_lv.placements.append( det_pla.name )
         

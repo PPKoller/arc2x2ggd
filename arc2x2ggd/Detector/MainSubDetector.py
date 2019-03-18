@@ -8,14 +8,14 @@ class MainSubDetectorBuilder(gegede.builder.Builder):
 
     ## The configure
     def configure(self, halfDimension=None, dx=None, dy=None, dz=None,
-                    material=None, auxParams=None, Positions=None, rotations=None, **kwds):
+                    material=None, auxParams=None, Positions=None, Rotations=None, **kwds):
         if halfDimension == None:
             halfDimension = {}
             halfDimension['dx'] = dx
             halfDimension['dy'] = dy
             halfDimension['dz'] = dz
         self.halfDimension, self.material = ( halfDimension, material )
-        self.Positions, self.rotations = ( Positions, rotations )
+        self.Positions, self.Rotations = ( Positions, Rotations )
         self.auxParams = auxParams
 
     ## The construct
@@ -32,8 +32,8 @@ class MainSubDetectorBuilder(gegede.builder.Builder):
             Rot = [Q("0deg"),Q("0deg"),Q("0deg")]
             if self.Positions!=None:
                 Pos=self.Positions[i]
-            if self.rotations!=None:
-                Rot=self.rotations[i]
+            if self.Rotations!=None:
+                Rot=self.Rotations[i]
 
             sb_lv = sb.get_volume()
             sb_pos = geom.structure.Position( sb_lv.name+'_pos', Pos[0], Pos[1], Pos[2] )

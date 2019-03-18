@@ -7,7 +7,7 @@ class TubsSubDetectorBuilder(gegede.builder.Builder):
 
     def configure( self, halfDimension=None, dz=None, rmax=None, rmin=None,
                     material=None, NElements=None, BeginGap=None,
-                    InsideGap=None, rotation=None, auxParams=None,
+                    InsideGap=None, Rotation=None, auxParams=None,
                     TranspV=None, SubBPos=None, positions=None, **kwds ):
         if halfDimension == None:
             halfDimension = {}
@@ -16,7 +16,7 @@ class TubsSubDetectorBuilder(gegede.builder.Builder):
             halfDimension['dz'] = dz
         self.halfDimension, self.material = ( halfDimension, material )
         self.NElements, self.BeginGap = ( NElements, BeginGap )
-        self.InsideGap, self.rotation  = ( InsideGap, rotation )
+        self.InsideGap, self.Rotation  = ( InsideGap, Rotation )
         self.TranspV, self.SubBPos = ( TranspV, SubBPos )
         self.auxParams = auxParams
         self.positions = positions
@@ -38,7 +38,7 @@ class TubsSubDetectorBuilder(gegede.builder.Builder):
             print "NAME = ", sb_lv.name
             print "pos = ", p
             sb_pos = geom.structure.Position( sb_lv.name+'_pos', p[0], p[1], p[2] )
-            sb_rot = geom.structure.Rotation( sb_lv.name+'_rot', self.rotation[0], self.rotation[1], self.rotation[2] )
+            sb_rot = geom.structure.Rotation( sb_lv.name+'_rot', self.Rotation[0], self.Rotation[1], self.Rotation[2] )
             sb_pla = geom.structure.Placement( sb_lv.name+'_pla', volume=sb_lv, pos=sb_pos, rot=sb_rot )
             main_lv.placements.append(sb_pla.name)
             

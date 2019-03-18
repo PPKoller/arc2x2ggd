@@ -8,7 +8,7 @@ class SimpleSubDetectorBuilder(gegede.builder.Builder):
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def configure( self, halfDimension=None, dx=None, dy=None, dz=None, rmax=None, rmin=None,
                     material=None, NElements=None, BeginGap=None,
-                    InsideGap=None, rotation=None, auxParams=None,
+                    InsideGap=None, Rotation=None, auxParams=None,
                     TranspV=None, SubBPos=None, shape=None, **kwds ):
         if halfDimension == None and shape == "Tubs":
             halfDimension = {}
@@ -22,7 +22,7 @@ class SimpleSubDetectorBuilder(gegede.builder.Builder):
             halfDimension['dz'] = dz
         self.halfDimension, self.material = ( halfDimension, material )
         self.NElements, self.BeginGap = ( NElements, BeginGap )
-        self.InsideGap, self.rotation  = ( InsideGap, rotation )
+        self.InsideGap, self.Rotation  = ( InsideGap, Rotation )
         self.TranspV, self.SubBPos = ( TranspV, SubBPos )
         self.auxParams = auxParams
         self.shape = shape

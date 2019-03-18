@@ -9,7 +9,7 @@ class SingleArrangePlaneBuilder(gegede.builder.Builder):
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def configure( self, halfDimension=None, dx=None, dy=None, dz=None,
                     material=None, NElements=None, BeginGap=None,
-                    InsideGap=None, rotation=None, TranspV=None, SubBPos=None, **kwds ):
+                    InsideGap=None, Rotation=None, TranspV=None, SubBPos=None, **kwds ):
         if halfDimension == None:
             halfDimension = {}
             halfDimension['dx'] = dx
@@ -17,7 +17,7 @@ class SingleArrangePlaneBuilder(gegede.builder.Builder):
             halfDimension['dz'] = dz
         self.halfDimension, self.material = ( halfDimension, material )
         self.NElements, self.BeginGap = ( NElements, BeginGap )
-        self.InsideGap, self.rotation  = ( InsideGap, rotation )
+        self.InsideGap, self.Rotation  = ( InsideGap, Rotation )
         self.TranspV, self.SubBPos = ( TranspV, SubBPos )
         pass
 

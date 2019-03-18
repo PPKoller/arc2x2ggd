@@ -67,18 +67,18 @@ def getShapeDimensions( ggd_vol, geom ):
 #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
 def getRotation( slf, geom ):
     """
-    Return the Rotation, is not defined return 0deg rotation
+    Return the Rotation, is not defined return 0deg Rotation
     """
-    if slf.rotation == None:
+    if slf.Rotation == None:
         return geom.structure.Rotation( slf.name+'_rot', '0.0deg', '0.0deg', '0.0deg' )
     else:
-        return geom.structure.Rotation( slf.name+'_rot', str(slf.rotation[0]),
-                                            str(slf.rotation[1]),  str(slf.rotation[2]) )
+        return geom.structure.Rotation( slf.name+'_rot', str(slf.Rotation[0]),
+                                            str(slf.Rotation[1]),  str(slf.Rotation[2]) )
 
 #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
 def getCrossRotations( slf, geom ):
     """
-    Return the Rotations, is not defined return 0deg rotations
+    Return the Rotations, is not defined return 0deg Rotations
     """
     if slf.RotTop == None:
         rotTop = geom.structure.Rotation( slf.name+'_rotTop', '0deg', '0deg', '0deg' )
@@ -156,8 +156,8 @@ def placeBuilders( slf, geom, main_lv, TranspV ):
     Place sub-builders inside the main_lv,
     simple linear arrange of 1 subbuilders
     """
-    # definition local rotation
-    rotation = getRotation( slf, geom )
+    # definition local Rotation
+    Rotation = getRotation( slf, geom )
     # check InsideGap
     InsideGap = getInsideGap( slf )
     # get the sub-builders and its dimensions
@@ -176,7 +176,7 @@ def placeBuilders( slf, geom, main_lv, TranspV ):
             sb_pos = geom.structure.Position(slf.name+sb_lv.name+str(elem)+'_pos',
                                                 pos[0], pos[1], pos[2])
             sb_pla = geom.structure.Placement(slf.name+sb_lv.name+str(elem)+'_pla',
-                                                volume=sb_lv, pos=sb_pos, rot =rotation)
+                                                volume=sb_lv, pos=sb_pos, rot =Rotation)
             main_lv.placements.append(sb_pla.name)
             pos = [p+s+t*InsideGap for p,s,t in zip(pos,step,TranspV)]
     # placement simple element, component or subdetector
@@ -184,7 +184,7 @@ def placeBuilders( slf, geom, main_lv, TranspV ):
         sb_pos = geom.structure.Position(slf.name+sb_lv.name+'_pos',
                                             pos[0], pos[1], pos[2])
         sb_pla = geom.structure.Placement(slf.name+sb_lv.name+'_pla',
-                                            volume=sb_lv, pos=sb_pos, rot =rotation)
+                                            volume=sb_lv, pos=sb_pos, rot =Rotation)
         main_lv.placements.append(sb_pla.name)
 
 #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
@@ -225,8 +225,8 @@ def placeComplexBuilders( slf, geom, main_lv, TranspV ):
     """
     Place sub-builders inside the main_lv
     """
-    # definition local rotation
-    rotation = getRotation( slf, geom )
+    # definition local Rotation
+    Rotation = getRotation( slf, geom )
     # check InsideGap
     InsideGap = getInsideGap( slf )
     # get the main dimensions
@@ -247,7 +247,7 @@ def placeComplexBuilders( slf, geom, main_lv, TranspV ):
             sb_pos = geom.structure.Position(slf.name+sb_lv.name+str(elem)+'_pos',
                                                 pos[0], pos[1], pos[2])
             sb_pla = geom.structure.Placement(slf.name+sb_lv.name+str(elem)+'_pla',
-                                                volume=sb_lv, pos=sb_pos, rot =rotation)
+                                                volume=sb_lv, pos=sb_pos, rot =Rotation)
             main_lv.placements.append(sb_pla.name)
             pos = [p+s+t*InsideGap for p,s,t in zip(pos,step,TranspV)]
 
@@ -393,11 +393,11 @@ def placeBooleanBuilders( slf, geom, main_lv, TranspV ):
     slf.add_volume( sb_boolean_lv )
 
 #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
-def rotation( axis, theta, vec ):
+def Rotation( axis, theta, vec ):
     """
-    Return the vector rotated, the rotation matrix is called inside.
+    Return the vector rotated, the Rotation matrix is called inside.
     """
-    Matrix = rotation_matrix( axis, theta)
+    Matrix = Rotation_matrix( axis, theta)
     rot_vec = [0,0,0]
     rot_vec[0] = Matrix[0][0]*vec[0] + Matrix[0][1]*vec[1] + Matrix[0][2]*vec[2]
     rot_vec[1] = Matrix[1][0]*vec[0] + Matrix[1][1]*vec[1] + Matrix[1][2]*vec[2]
@@ -405,9 +405,9 @@ def rotation( axis, theta, vec ):
     return rot_vec
 
 #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
-def rotation_matrix( axis, theta ):
+def Rotation_matrix( axis, theta ):
     """
-    Return the rotation matrix associated with counterclockwise rotation about
+    Return the Rotation matrix associated with counterclockwise Rotation about
     the given axis by theta degrees. (https://en.wikipedia.org/wiki/Euler-Rodrigues_formula)
     """
     theta_rad = math.radians(theta)

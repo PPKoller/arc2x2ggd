@@ -8,12 +8,12 @@ class BodyBuilder(gegede.builder.Builder):
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
     def configure( self, material=None, tubrmin=None, tubrmax=None, tubdz=None,
                     caprmin=None, caprmax=None, caprtor=None,
-                    startphi=None, deltaphi=None, rotation=None, SubBPos=None, **kwds ):
+                    startphi=None, deltaphi=None, Rotation=None, SubBPos=None, **kwds ):
         self.material = material 
         self.tubrmin, self.tubrmax, self.tubdz = ( tubrmin, tubrmax, tubdz )
         self.caprmin, self.caprmax, self.caprtor = ( caprmin, caprmax, caprtor )
         self.startphi, self.deltaphi = ( startphi, deltaphi )
-        self.rotation = rotation
+        self.Rotation = Rotation
         self.SubBPos = SubBPos
 
     #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
@@ -53,8 +53,8 @@ class BodyBuilder(gegede.builder.Builder):
         sb_pos = geom.structure.Position(self.name+sb_lv.name+'_pos',
                                          self.SubBPos[0], self.SubBPos[1], self.SubBPos[2])
         sb_rot = []                                         
-        if self.rotation != None:                                         
-            sb_rot = geom.structure.Rotation(self.name+sb_lv.name+'_rot', self.rotation[0], self.rotation[1], self.rotation[2])
+        if self.Rotation != None:                                         
+            sb_rot = geom.structure.Rotation(self.name+sb_lv.name+'_rot', self.Rotation[0], self.Rotation[1], self.Rotation[2])
         else:            
             sb_rot = geom.structure.Rotation(self.name+sb_lv.name+'_rot',
                                              '0.0deg', '0.0deg', '0.0deg')  
