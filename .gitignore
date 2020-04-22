@@ -1,0 +1,6 @@
+*.pyc
+arc2x2.egg-info
+arc2x2ggd.egg-info
+*.gdml
+*.swp
+geom-test.root

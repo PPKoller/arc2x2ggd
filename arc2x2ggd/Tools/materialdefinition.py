@@ -2,7 +2,12 @@
 #^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
 def define_materials( g ):
     h  = g.matter.Element("hydrogen",   "H",  1,  "1.00791*g/mole" )
-    b  = g.matter.Element("boron",      "B",  5,  "10.811*g/mole" )
+    #b  = g.matter.Element("boron",      "B",  5,  "10.811*g/mole" )
+    b10=g.matter.Isotope("boron10", 5, 10, "10.01*g/mole")
+    b11=g.matter.Isotope("boron11", 5, 11, "11.00*g/mole")
+    b=g.matter.Composition("boron",
+                            isotopes=(("boron10",0.199),
+                                      ("boron11",0.801)) )
     c  = g.matter.Element("carbon",     "C",  6,  "12.0107*g/mole")
     n  = g.matter.Element("nitrogen",   "N",  7,  "14.0671*g/mole")
     o  = g.matter.Element("oxygen",     "O",  8,  "15.999*g/mole" )
@@ -37,6 +42,7 @@ def define_materials( g ):
     br = g.matter.Element("bromine",    "Br", 35, "79.904*g/mole" )
     sb = g.matter.Element("antimony",   "Sb", 51, "121.76*g/mole" )
     xe = g.matter.Element("xenon",      "Xe", 54, "131.293*g/mole")
+    au = g.matter.Element("gold",       "Au", 79, "196.9666*g/mole")
     pb = g.matter.Element("lead",       "Pb", 82, "207.20*g/mole" )
 
     # Molecules for Rock and fibrous_glass Mixtures
@@ -98,7 +104,7 @@ def define_materials( g ):
                                 ("carbon",   0.856289)
                             ))
 
-       # materials for the radiators and st planes following
+       # Materials for the radiators and st planes following
        # WARNING! densities not right!
     C3H6   = g.matter.Molecule("C3H6",   density="0.946*g/cc",   elements=(("carbon",3), ("hydrogen",6)))
     fracC3H6 = (25*0.946)/(25*0.946+125*0.001225) # TODO get from spacing in RadiatorBldr cfg
@@ -126,7 +132,7 @@ def define_materials( g ):
                                 #("xenon",  1-fracCO2)   #GENIE XSec spline having trouble with xenon
                             ))
 
-    # materials for the targets and st planes following
+    # Materials for the targets and st planes following
     H2O      = g.matter.Molecule("Water",       density="1.0*kg/l",   elements=(("oxygen",1),("hydrogen",2)))
     ArTarget = g.matter.Molecule("ArgonTarget", density="0.2297*g/cc", elements=(("argon",1),))
     #ArTarget = g.matter.Molecule("ArgonTarget", density="10.2297*g/cc", elements=(("argon",1),))
@@ -187,7 +193,7 @@ def define_materials( g ):
                                 ("Fe2O3",  0.001)
                             ))
 
-       #   materials for the RPCs
+       #   Materials for the RPCs
        # tetraflouroethane:
     CH2FCF3 = g.matter.Molecule( "CH2FCF3",  density="0.00425*g/cc",
                             elements=( ("carbon",2), ("hydrogen",2), ("fluorine",4) ))
@@ -209,7 +215,7 @@ def define_materials( g ):
                             ))
 
 
-    # materials for the ECAL
+    # Materials for the ECAL
     # Epoxy Resin (Glue that will hold the scintillator bars and the lead sheets together):
     # probably won't show up, just the default material of SBPlane
     epoxy_resin   = g.matter.Molecule("epoxy_resin",   density="1.1250*g/cc",
@@ -283,7 +289,7 @@ def define_materials( g ):
                             ))
 
     # http://www.engineeringtoolbox.com/engineering-materials-properties-d_1225.html
-    # http://hepwww.rl.ac.uk/atlas-sct/engineering/material_budget/models/Endcap_Module/ATLAS_ECSCT_materials.pdf
+    # http://hepwww.rl.ac.uk/atlas-sct/engineering/material_budget/models/Endcap_Module/ATLAS_ECSCT_Materials.pdf
     # table 3 - C6 H6 O, jp
     epoxy = g.matter.Molecule("Epoxy", density="1.25*g/cc",
                             elements = (
@@ -292,7 +298,7 @@ def define_materials( g ):
                                     ("oxygen",1)
                             ))
 
-    # http://hepwww.rl.ac.uk/atlas-sct/engineering/material_budget/models/Endcap_Module/ATLAS_ECSCT_materials.pdf
+    # http://hepwww.rl.ac.uk/atlas-sct/engineering/material_budget/models/Endcap_Module/ATLAS_ECSCT_Materials.pdf
     # table 6, fractional mass, jp
     glass = g.matter.Mixture("Glass", density="2.70*g/cc",
                             components = (
@@ -306,7 +312,7 @@ def define_materials( g ):
                                     ("oxygen",0.4440)
                             ))
 
-    # http://hepwww.rl.ac.uk/atlas-sct/engineering/material_budget/models/Endcap_Module/ATLAS_ECSCT_materials.pdf
+    # http://hepwww.rl.ac.uk/atlas-sct/engineering/material_budget/models/Endcap_Module/ATLAS_ECSCT_Materials.pdf
     # table 6, fractional mass, jp
     # could be also G10
     fr4 = g.matter.Mixture("FR4", density="1.850*g/cc",
@@ -329,6 +335,15 @@ def define_materials( g ):
                                     ("carbon",   0.916),
                                     ("hydrogen", 0.084)
                             ))
+
+    # ScintillatorLoadedBoron5:
+    ScintillatorLoadedBoron5  = g.matter.Mixture("ScintillatorLoadedBoron5",   density="1.05*g/cc",
+                            components = (
+                                    ("carbon",  0.866),
+                                    ("hydrogen", 0.084),
+                                    ("boron", 0.05)
+                            ))
+
     # Oil to be fixed
     Oil  = g.matter.Mixture("Oil",   density="0.8*g/cc",
                             components = (
@@ -352,7 +367,7 @@ def define_materials( g ):
                                     ("epoxy_resin",0.10)
                             ))
 
-    # materials for Gas TPC construction
+    # Materials for Gas TPC construction
 
     # For Gas TPC field cage & central electrode
     # Polyvinyl fluoride (Tedlar)
@@ -465,3 +480,56 @@ def define_materials( g ):
 
     nogas =  g.matter.Mixture('NoGas',
                               density='1.0E-25*g/cc',components=(('argon',1.0),) )
+
+
+# ArCLight (https://arxiv.org/pdf/1711.11409.pdf)
+
+    # G10 structure (same as FR4)
+    g10 = g.matter.Mixture("G10", density="1.850*g/cc",
+                            components = (
+                                    ("Epoxy",0.206),
+                                    ("Glass",0.794)
+                            ))
+
+    # Pixelboard pads
+    Gold = g.matter.Molecule("Gold",    density="19.32*g/cc",  elements=(("gold",1),))
+
+    # Pixelboard ASICs
+    Silicon = g.matter.Molecule("Silicon",    density="19.32*g/cc",  elements=(("silicon",1),))
+
+    # Scintillator (PVT, polyvinyl toluene)
+    # 'https://eljentechnology.com/products/wavelength-shifting-plastics/ej-280-ej-282-ej-284-ej-286'
+    ej280wls = g.matter.Molecule("EJ280WLS", density="1.023g/cc",
+                            elements = (
+                                ("carbon", 9),
+                                ("hydrogen", 10)
+                            ))
+
+    # Mirror film (Vikuiti Enhanced Specular Reflector (ESR), 3M Inc)
+    # 'http://multimedia.3m.com/mws/media/380802O/vikuititm-esr-msds.pdf?fn=ESR.pdf'
+    # Mylar (Polyethylenterephthalat) ???
+    # 'https://de.wikipedia.org/wiki/Polyethylenterephthalat'
+    esr = g.matter.Molecule("ESR", density="1.38g/cc",
+                            elements = (
+                                ("carbon", 10),
+                                ("hydrogen", 8),
+                                ("oxygen", 4)
+                            ))
+
+    # Dichroic mirror (for the moment same as Mirror film)
+    # not yet used
+
+    # TPB (Tetraphenyl butadiene (1,1,4,4-tetraphenyl-1,3-butadiene))
+    # 'https://en.wikipedia.org/wiki/Tetraphenyl_butadiene'
+    tpb = g.matter.Molecule("TPB", density="1.079g/cc",
+                            elements = (
+                                ("carbon", 28),
+                                ("hydrogen", 22)
+                            ))
+
+    # SiPM (Hamamatsu S13360-6025PE)
+    # 'https://www.hamamatsu.com/eu/en/product/type/S13360-6025PE/index.html'
+    # Using Silicon
+
+    # SiPM plastic spacer
+    # Using PVT

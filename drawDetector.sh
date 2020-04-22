@@ -1,1 +1,1 @@
-root -l 'materialDisplay.C("arc2x2.gdml")'
+root -l 'materialDisplay.C("ArgonCube_2x2.gdml")'
